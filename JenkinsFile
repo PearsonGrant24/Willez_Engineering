@@ -16,9 +16,11 @@ pipeline {
                     mkdir -p $NPM_CONFIG_CACHE
 
                     ls -la
-                    cat package-lock.json || echo "Lockfile not found ..."
+                    node --version
+                    npm --version
                     npm ci --verbose
                     npm run build
+                    ls -la
                 '''
             }
         }
