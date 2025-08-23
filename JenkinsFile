@@ -16,8 +16,7 @@ pipeline {
 
             }
             steps {
-                sh '''
-                    rm -rf /var/lib/jenkins/workspace/Willez-Eng-Pipeline
+                sh '''                    
                     ls -la
                     node --version
                     npm --version
