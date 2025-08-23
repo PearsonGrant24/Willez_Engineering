@@ -2,6 +2,11 @@ pipeline {
     agent any
     
     stages {
+        stage('clean workspace') {
+            steps {
+                deleteDir()
+            }
+        }
         stage("Build"){
             agent {
                 docker {
