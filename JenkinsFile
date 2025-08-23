@@ -12,11 +12,12 @@ pipeline {
             }
             steps {
                 sh '''
+                    rm -rf /var/lib/jenkins/workspace/Willez-Eng-Pipeline
                     ls -la
                     node --version
                     npm --version
                     npm cache clean --force
-                    npm ci
+                    npm ci --verbose
                     npm run build
                 '''
             }
