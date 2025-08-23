@@ -1,12 +1,7 @@
 pipeline {
     agent any
     
-    stages {
-        stage('clean workspace') {
-            steps {
-                deleteDir()
-            }
-        }
+    stages {        
         stage("Build"){
             agent {
                 docker {
@@ -21,11 +16,9 @@ pipeline {
                     mkdir -p $NPM_CONFIG_CACHE
 
                     ls -la
-                    node --version
-                    npm --version
-                    npm cache clean --force
+                    cat package-lock.json || echo "Lockfile not found ..."
                     npm ci --verbose
-                    npm run build
+                    
                 '''
             }
         }
