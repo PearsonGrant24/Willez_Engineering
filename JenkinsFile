@@ -26,23 +26,21 @@ pipeline {
             }
         }
 
-        stage('Tests') {
-            
-                stage('Unit tests') {
-                    agent {
-                        docker {
-                            image 'node:18-alpine'
-                            reuseNode true
-                        }
-                    }
+        stage('Tests') {          
+            agent {
+                docker {
+                    image 'node:18-alpine'
+                    reuseNode true
+                }
+            }
 
-                    steps {
+            steps {
                         sh '''
                             #test -f build/index.html
                             npm test
                         '''
                     }
-                }
+                
                 
 
             stage('E2E') {
