@@ -56,9 +56,9 @@ pipeline {
 
                     export NPM_CONFIG_CACHE=$PWD/.npm-cache
                     mkdir -p $NPM_CONFIG_CACHE
-                    
-                    npm install netlify-cli
-                    node_modules/.bin/netlify --version
+
+                    npm install --unsafe-perm netlify-cli
+                    npx netlify deploy --dir=build --prod
                 '''
             }
         }
