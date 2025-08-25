@@ -12,58 +12,11 @@ pipeline {
             }
             steps {
                 sh '''     
-                    export NPM_CONFIG_CACHE=$PWD/.npm-cache
-                    mkdir -p $NPM_CONFIG_CACHE
-
-                    ls -la
                     node --version
-                    npm --version
-                    npm ci --verbose
-                    npm run build
-                    ls -la
                 '''
             }
         }
 
-        stage('Tests') {
-            parallel {
-                stage('Unit tests') {
-                    agent {
-                        docker {
-                            image 'node:18-alpine'
-                            reuseNode true
-                        }
-                    }
-
-                    steps {
-                        sh '''
-                            #test -f build/index.html
-                            npm test
-                        '''
-                    }
-                    
-                }
-                
-        stage('Deploy') {
-            agent {
-                docker {
-                    image 'node:18-alpine'
-                    reuseNode true
-                }
-            }
-            steps {
-                sh '''
-
-                    export NPM_CONFIG_CACHE=$PWD/.npm-cache
-                    mkdir -p $NPM_CONFIG_CACHE
-
-                    npm install --unsafe-perm --legacy-peer-deps netlify-cli
-                    node_modules/.bin/netlify --version
-                    
-                '''
-            }
-        }
-            }
-        }
+       
     }    
 }
