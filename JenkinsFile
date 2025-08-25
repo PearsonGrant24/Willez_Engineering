@@ -9,7 +9,6 @@ pipeline {
                     image 'node:18-alpine'
                     reuseNode true
                 }
-
             }
             steps {
                 sh '''     
@@ -55,6 +54,9 @@ pipeline {
 
                     steps {
                         sh '''
+                            export NPM_CONFIG_CACHE=$PWD/.npm-cache
+                            mkdir -p $NPM_CONFIG_CACHE
+
                             npm install serve
                             node_modules/.bin/serve -s build &
                             sleep 10
@@ -70,6 +72,5 @@ pipeline {
                 }
             }
         }
-
     }    
 }
