@@ -57,7 +57,7 @@ pipeline {
                     export NPM_CONFIG_CACHE=$PWD/.npm-cache
                     mkdir -p $NPM_CONFIG_CACHE
 
-                    npm install --legacy-peer-deps netlify-cli
+                    npm install --unsafe-perm --legacy-peer-deps netlify-cli
                     node_modules/.bin/netlify --version
                     
                 '''
