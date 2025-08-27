@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import solar from './'
 
 export const HomePageSlider:React.FunctionComponent = () : any | null => {
     
@@ -17,7 +18,7 @@ export const HomePageSlider:React.FunctionComponent = () : any | null => {
                 {slides.map((slide:any, slideIndex:number)=>(
                     <SwiperSlide>
                         <div className="single-slide bg-cover" key={slideIndex}
-                            style={{backgroundImage: "url('/assets/pages/img/shop-slider/slide3/bg2.svg')", }} >
+                            style={{backgroundImage: "url('/assets/elements/img/barner/solarrack.jpg')", }} >
                             <div className="container">
                                 <div className="row">
                                     <div className="col-3">
@@ -40,7 +41,8 @@ export const HomePageSlider:React.FunctionComponent = () : any | null => {
                             </div>
                         </div>
                     </SwiperSlide>
-                ))}
+                ))
+                }
 
             </Swiper>
 

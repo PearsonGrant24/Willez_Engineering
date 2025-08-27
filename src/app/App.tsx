@@ -5,8 +5,8 @@ import './assets/App.scss';
 //import Header  from './components/layout/header/Header.tsx';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './components/Home.tsx';
-import Header from './components/header/Header.tsx'
-//import Home from './components/Home.tsx';
+import Header from './components/header/Header.tsx';
+import Footer from './components/footer/Footer.tsx';
 
 // type AppProps = {
 //   basename: string
@@ -27,6 +27,7 @@ const App = () => {
             {/* </>
               div
           </Header> */}
+          <Footer/>
           {/* <div className='page d-flex flex-row flex-column-fluid'> */}
           
           {/* <Header/ */}

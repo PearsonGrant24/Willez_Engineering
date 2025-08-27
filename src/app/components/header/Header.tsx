@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-// import { useAuth } from "../../../auth/provider/AuthProvider";
-// import {setCurrency} from "../../../redux/features/menu/MenuSlice.ts";
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
 import { useNavigate } from "react-router-dom";
+
 
 export default function Header() {
   const navigate = useNavigate();
@@ -33,7 +32,7 @@ export default function Header() {
                           className="fal fa-envelope"
                           style={{ color: "#e6400c" }}
                         ></i>
-                        willezeng@gmail.com
+                        info@willezeng.co.zw
                       </a>
                     </li>
                     <li>
@@ -128,34 +127,36 @@ export default function Header() {
                     aria-labelledby="navbarDropdown"
                   >
                     <a className="dropdown-item" href="#Backpacks">
-                      Backpacks
+                      House wiring
                     </a>
                     <a className="dropdown-item" href="#Sportsbags">
-                      Sports bags
+                      Solar system fix & supply
                     </a>
                     <a className="dropdown-item" href="#Luggagebags">
-                      Travel bags
+                      Electrical components
                     </a>
                     <a className="dropdown-item" href="#Coolerbags">
-                      Food/Cooler bags
+                      Electrical specing
                     </a>
                     <a className="dropdown-item" href="#Luggagebags">
-                      Gym bags
+                      Circuit wiring/rewiring
                     </a>
                     <a className="dropdown-item" href="#Backpacks">
-                      Book bags
+                      Earthing
                     </a>
                     <a className="dropdown-item" href="#Coolerbags">
-                      Pencil bags
-                    </a>
-                    <a className="dropdown-item" href="#Luggagebags">
-                      Chair bags
-                    </a>
+                      PElectrical related faults
+                    </a>                    
                   </div>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#contactus">
                     Contacts
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#contactus">
+                    Latest News
                   </a>
                 </li>
               </ul>
