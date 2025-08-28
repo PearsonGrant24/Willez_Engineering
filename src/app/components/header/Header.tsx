@@ -145,7 +145,7 @@ export default function Header() {
                       Earthing
                     </a>
                     <a className="dropdown-item" href="#Coolerbags">
-                      PElectrical related faults
+                      Electrical related faults
                     </a>                    
                   </div>
                 </li>
