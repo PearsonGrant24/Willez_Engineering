@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import solar from './'
 
 export const HomePageSlider:React.FunctionComponent = () : any | null => {
     
@@ -10,7 +9,7 @@ export const HomePageSlider:React.FunctionComponent = () : any | null => {
   return (
     <>
     
-        <section className="hero-slide-wrapper techex-landing-page">
+        <section className="hero slide-wrapper techex-landing-page">
 
             <Swiper autoplay={true} navigation={true} pagination={true}
                 
