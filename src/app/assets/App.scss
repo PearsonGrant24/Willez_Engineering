@@ -243,6 +243,7 @@ header.header-5 {
   height: 280px;
   bottom: 8rem;
   left: 28rem;
+  z-index: 3;
 }
 
 .img-bottom-right {
@@ -252,30 +253,59 @@ header.header-5 {
   right: 11rem;
 }
 
-/* LINE BESIDE BOX */
-.vertical-line {
-  height: 4px;
-  width: 4px;  //0 to start invisible
-  background: red; /* your brand color */
-  position: absolute;
-  top: 10%;
-  left: 0px;
-  margin-left: 10px;
-//   z-index: 2;
-
-  /* Animation start */
+/* --------------------------------LINE BESIDE BOX ------------------*/
+.horizontal-line,
+.vertical-line,
+.horizontal-line-2 {
+  width: 0;
   height: 0;
-  animation: growLine 2s ease-out forwards;
 }
 
-@keyframes growLine {
-  from {
-    width: 0;
-  }
-  to {
-    height: 500px; /* final size */
-  }
+/* Animate only when .animate class is present */
+.line-container.animate .horizontal-line {
+  position: absolute;
+  top: 20px;
+  left: -30px;
+  height: 4px;
+  background: #0aeec8;
+  animation: drawHorizontal 2s ease-out forwards;
 }
+
+.line-container.animate .vertical-line {
+  position: absolute;
+  top: 20px;
+  left: 83%;
+  width: 4px;
+  background: #0aeec8;
+  animation: drawVertical 1.5s ease-out forwards;
+  animation-delay: 2s;
+}
+
+.line-container.animate .horizontal-line-2 {
+  position: absolute;
+  top: 390px;
+  right: 100px;
+  height: 4px;
+  background: #0aeec8;
+  animation: drawHorizontal2 2s ease-out forwards;
+  animation-delay: 3.5s;
+}
+
+@keyframes drawHorizontal {
+  from { width: 0; }
+  to   { width: 88%; }
+}
+@keyframes drawVertical {
+  from { height: 0; }
+  to   { height: 370px; }
+}
+@keyframes drawHorizontal2 {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+// ------------------end of deco lines
+
 
 .feature-right {
   max-width: 600px;

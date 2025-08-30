@@ -1,8 +1,34 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import {HomePageSlider} from "./layout/widgets/sliders/HomePageSlider.tsx";
 import 'swiper/css';
 
 export default function Home() {
+
+    const lineRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+                observer.unobserve(entry.target); // run once
+            }
+            });
+        },
+        { threshold: 0.4 } // trigger when 40% visible
+        );
+
+        if (lineRef.current) {
+        observer.observe(lineRef.current);
+        }
+
+        return () => {
+        if (lineRef.current) {
+            observer.unobserve(lineRef.current);
+        }
+        };
+    }, []);
 
 return (
     <>
@@ -101,7 +127,11 @@ return (
                 <img src="assets/elements/img/solar2.png" alt="solar small" className="feature-img img-small img-bottom-left" />
                 <img src="assets/elements/img/solar3.png" alt="solar small" className="feature-img img-small img-bottom-right" />
                 </div>
-                <div className="vertical-line"></div>
+                <div class="line-container" ref={lineRef}>
+                    <div class="horizontal-line"></div>
+                    <div class="vertical-line"></div>
+                    <div class="horizontal-line-2"></div>
+                </div>
             </div>
 
             <div className="feature-right">
