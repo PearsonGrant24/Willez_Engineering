@@ -94,10 +94,25 @@ return (
             </div>
         </section>
 
-        <section>
-            <h1 class="display-4 fw-bold mb-3">Powering a Brighter Future</h1>
-        </section>
+        <section className="feature-section">
+            <div className="feature-left">
+                <div className="blue-box">
+                <img src="assets/elements/img/solar1.png" alt="solar large" className="feature-img img-large" />
+                <img src="assets/elements/img/solar2.png" alt="solar small" className="feature-img img-small img-bottom-left" />
+                <img src="assets/elements/img/solar3.png" alt="solar small" className="feature-img img-small img-bottom-right" />
+                </div>
+                <div className="vertical-line"></div>
+            </div>
 
+            <div className="feature-right">
+                <h2>Leading the way</h2>
+                <p>
+                We are home to some of the world’s brightest minds in solar engineering, 
+                smart storage solutions, and clean energy innovation.
+                </p>
+                <button className="btn-primary">Learn More</button>
+            </div>
+        </section>
     </>
 );
 }; 

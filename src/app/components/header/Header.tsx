@@ -95,7 +95,7 @@ export default function Header() {
       {/* Hero section */}
       <header className="hero d-flex align-items-center justify-content-center text-center">
         <div className="hero-content">
-          <h1 className="display-4 fw-bold mb-3">Powering a Brighter Future</h1>
+          <h1 className="display-5 fw-bold mb-3">Powering a Brighter Future</h1>
           <p className="lead mb-0">High-efficiency solar, smart storage & reliable engineering.</p>
         </div>
       </header>

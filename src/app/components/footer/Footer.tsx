@@ -7,40 +7,9 @@ export default function Footer() {
 
     return (
         <>
-        <footer>
-            {/* <div className="steps-block" style={{color:'white'}}>
-                <div className="container-fluid" style={{background:'orange'}}>
-                    <div className="container">
-                    <div className="row">
-                    <div className="col-md-4 steps-block-col">
-                        <i className="fa fa-truck" />
-                        <div>
-                        <h2>Free shipping</h2>
-                        <em>Express delivery withing 3 days</em>
-                        </div>
-                        <span>&nbsp;</span>
-                    </div>
-                    <div className="col-md-4 steps-block-col">
-                        <i className="fa fa-gift" />
-                        <div>
-                        <h2>Daily Gifts</h2>
-                        <em>3 Gifts daily for lucky customers</em>
-                        </div>
-                        <span>&nbsp;</span>
-                    </div>
-                    <div className="col-md-4 steps-block-col">
-                        <i className="fa fa-phone" />
-                        <div>
-                        <h2>477 505 8877</h2>
-                        <em>24/7 customer care available</em>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                </div>
-                </div> */}
+        <footer>           
             <div className="footer-4 footer-wrap" style={{background:'#313030'}}>           
-                <div className="footer-widgets">
+                <div className="footer-widgets foot">
                     <div className="container">
                         <div className="row justify-content-between">                            
                             {/*    /.col-lg-3 - single-footer-wid    */}

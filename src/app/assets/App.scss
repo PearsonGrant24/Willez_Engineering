@@ -186,4 +186,128 @@ header.header-5 {
       position: relative;
       z-index: 1; /* keeps text and cards above the background */
     }
-// ------------------------------------------------------------------------------------------------
+// -------------------------------Leading the way-----------------------------------------------------------------
+
+
+.feature-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7rem 4%;
+  gap: 3rem;
+  padding-bottom: 12rem;
+  
+}
+
+.feature-left {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.blue-box {
+  background-color: #091652;
+  width: 610px;
+  height: 610px;
+  position: relative;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+/* IMAGES */
+.feature-img {
+  position: absolute;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(184, 44, 44, 0.15);
+  object-fit: cover;
+}
+
+.img-large {
+  width: 380px;
+  height: 380px;
+  top: -50px;
+  left: 40%;
+  transform: translateX(-50%);
+}
+
+.img-small {
+  width: 120px;
+  height: 100px;
+}
+
+.img-bottom-left {
+  width: 280px;
+  height: 280px;
+  bottom: 8rem;
+  left: 28rem;
+}
+
+.img-bottom-right {
+  width: 280px;
+  height: 280px;
+  bottom: -15px;
+  right: 11rem;
+}
+
+/* LINE BESIDE BOX */
+.vertical-line {
+  height: 4px;
+  width: 4px;  //0 to start invisible
+  background: red; /* your brand color */
+  position: absolute;
+  top: 10%;
+  left: 0px;
+  margin-left: 10px;
+//   z-index: 2;
+
+  /* Animation start */
+  height: 0;
+  animation: growLine 2s ease-out forwards;
+}
+
+@keyframes growLine {
+  from {
+    width: 0;
+  }
+  to {
+    height: 500px; /* final size */
+  }
+}
+
+.feature-right {
+  max-width: 600px;
+}
+
+.feature-right h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.feature-right p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.btn-primary {
+  background-color: #0aeec8;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  
+}
+
+.btn-primary:hover {
+  background-color: #08c9aa;
+  transform: translateY(-2px);
+}
+
+
+
