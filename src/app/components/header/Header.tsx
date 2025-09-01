@@ -61,6 +61,7 @@ export default function Header() {
           {/* Nav links */}
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto align-items-center gap-3">
+              <li className="nav-item"><a className="nav-link" href="#">About</a></li>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
