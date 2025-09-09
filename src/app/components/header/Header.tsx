@@ -61,7 +61,7 @@ export default function Header() {
           {/* Nav links */}
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto align-items-center gap-3">
-              <li className="nav-item"><a className="nav-link" href="#">About</a></li>
+              <li className="nav-item"><a className="nav-link" href="/About">About</a></li>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -82,9 +82,9 @@ export default function Header() {
                   <li><a className="dropdown-item" href="#">Earthing & faults</a></li>
                 </ul>
               </li>
-              <li className="nav-item"><a className="nav-link" href="#">Technology</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Solutions</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Experience & Insights</a></li>
+              <li className="nav-item"><a className="nav-link" href="/Technology">Technology</a></li>
+              <li className="nav-item"><a className="nav-link" href="/Solutions">Solutions</a></li>
+              <li className="nav-item"><a className="nav-link" href="Experience">Experience & Insights</a></li>
               <li className="nav-item">
                 <a className="btn btn-all ms-3" href="#">Get in Touch</a>
               </li>

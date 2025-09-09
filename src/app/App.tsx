@@ -21,16 +21,8 @@ const App = () => {
           {/* <Header/ */}
           {/* <Route path = '/' element={() => <Home/>} /> */}
           <RoutePath />
-          {/* <Header> */}
-            {/* <> */}
-                {/*  Logo, Header navigation, Search   */}
-            {/* </>
-              div
-          </Header> */}
-          <Footer/>
-          {/* <div className='page d-flex flex-row flex-column-fluid'> */}
           
-          {/* <Header/ */}
+          <Footer/>
         
           </BrowserRouter>
     

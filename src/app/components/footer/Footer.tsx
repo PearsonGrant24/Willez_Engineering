@@ -7,9 +7,17 @@ export default function Footer() {
 
     return (
         <>
-        <footer>           
+        <footer>   
+                    
             <div className="footer-4 footer-wrap" style={{background:'#313030'}}>           
+                
+                
+                   <div className="footer-line-slant-1"></div> 
+                    <div className="footer-line-slant-2"></div>
+                
+
                 <div className="footer-widgets foot">
+                    
                     <div className="container">
                         <div className="row justify-content-between">                            
                             {/*    /.col-lg-3 - single-footer-wid    */}
@@ -112,10 +120,15 @@ export default function Footer() {
                                 </div>
                             </div>
                             {/*    /.col-lg-3 - single-footer-wid    */}
+                            
                         </div>
                     </div>
                 </div> 
-                </div>               
+                </div>           
+                <div className="relative bg-black text-white py-10">
+                    <div className="container mx-auto text-center">
+                        <p>© 2025 Your Company. All rights reserved.</p></div>
+                    </div>    
             </footer>          
         </>
     );
