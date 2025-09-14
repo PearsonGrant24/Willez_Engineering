@@ -86,7 +86,7 @@ export default function Header() {
               <li className="nav-item"><a className="nav-link" href="/Solutions">Solutions</a></li>
               <li className="nav-item"><a className="nav-link" href="Experience">Experience & Insights</a></li>
               <li className="nav-item">
-                <a className="btn btn-all ms-3" href="#">Get in Touch</a>
+                <a className="btn btn-all ms-3" href="GetinTouch">Get in Touch</a>
               </li>
             </ul>
           </div>

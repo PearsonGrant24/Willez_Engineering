@@ -3,6 +3,7 @@ import { Routes,  Route, Router } from 'react-router-dom';
 // const Home = lazy(() => import("../components/pages/Home.tsx"));
 import Home from '../components/Home.tsx';
 import About from '../components/About.tsx';
+import GetinTouch from '../components/GetinTouch.tsx';
 
 
 const RoutePath = () => {
@@ -15,6 +16,7 @@ const RoutePath = () => {
         <Route path="/" element={<Home />} />
 		<Route path="/Home" element={<Home />} />
 		<Route path="/About" element={<About />} />
+		<Route path="/GetinTouch" element={<GetinTouch />} />
 
         </Routes>
 		
