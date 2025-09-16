@@ -4,6 +4,7 @@ import { Routes,  Route, Router } from 'react-router-dom';
 import Home from '../components/Home.tsx';
 import About from '../components/About.tsx';
 import GetinTouch from '../components/GetinTouch.tsx';
+import SolarProducts from '../components/SolarProducts.tsx';
 
 
 const RoutePath = () => {
@@ -16,7 +17,8 @@ const RoutePath = () => {
         <Route path="/" element={<Home />} />
 		<Route path="/Home" element={<Home />} />
 		<Route path="/About" element={<About />} />
-		<Route path="/GetinTouch" element={<GetinTouch />} />
+		<Route path="/GetinTouch" element={<GetinTouch />} />1
+		<Route path="/SolarProducts" element={<SolarProducts />} />
 
         </Routes>
 		

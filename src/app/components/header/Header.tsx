@@ -73,13 +73,13 @@ export default function Header() {
                   Products
                 </a>
                 <ul className="dropdown-menu dropdown-menu-dark">
-                  <li><a className="dropdown-item" href="#">House wiring</a></li>
-                  <li><a className="dropdown-item" href="#">Solar</a></li>
-                  <li><a className="dropdown-item" href="#">System fix & supply</a></li>
-                  <li><a className="dropdown-item" href="#">Electrical components</a></li>
-                  <li><a className="dropdown-item" href="#">Electrical specing</a></li>
-                  <li><a className="dropdown-item" href="#">Circuit wiring/rewiring</a></li>
-                  <li><a className="dropdown-item" href="#">Earthing & faults</a></li>
+                  <li><a className="dropdown-item" href="/SolarProducts">House wiring</a></li>
+                  <li><a className="dropdown-item" href="/SolarProducts">Solar</a></li>
+                  <li><a className="dropdown-item" href="/SolarProducts">System fix & supply</a></li>
+                  <li><a className="dropdown-item" href="/SolarProducts">Electrical components</a></li>
+                  <li><a className="dropdown-item" href="/SolarProducts">Electrical specing</a></li>
+                  <li><a className="dropdown-item" href="/SolarProducts">Circuit wiring/rewiring</a></li>
+                  <li><a className="dropdown-item" href="/SolarProducts">Earthing & faults</a></li>
                 </ul>
               </li>
               <li className="nav-item"><a className="nav-link" href="/Technology">Technology</a></li>

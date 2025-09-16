@@ -387,43 +387,196 @@ header.header-5 {
 
 // -------------------About_------------------------------
 
-
-.about-line-slant-1 {
-  position: absolute;
-  bottom: 44.2rem;   /* adjust spacing from footer bottom */
-  left: 86.8rem;     /* adjust spacing from footer left */
-  width: 304px;   /* length of line */
-  height: 6px;    /* thickness */
-  background-color: #0aeec8; /* same accent color */
-  transform: rotate(26deg); /* slant effect (\ shape) */
-  transform-origin: left center; /* pivot from left */
-  animation: drawHorizontal 3s ease-out forwards; 
-  animation-delay: 1.5s;
+/* --- Blue box / images --- */
+.blue-box {
+  background-color: #0aeec8;
+  border-radius: 12px;
+  overflow: hidden;
+  /* no fixed height so the box expands naturally with images + line-wrapper */
 }
 
-.about-horizontal-1 {
+/* image sizes - responsive */
+.img-large {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.img-small {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Adds a subtle shadow to images */
+.blue-box img {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+/* --- Line wrapper reserves space so the blue box includes it in flow --- */
+.line-wrapper {
+  position: relative;
+  width: 100%;
+  height: 160px; /* reserve height for the animated path */
+  overflow: visible;
+}
+
+/* container that holds the three animated segments */
+.line-container {
   position: absolute;
-  bottom: 36rem;   /* adjust spacing from footer bottom */
-  left: 70rem;     /* adjust spacing from footer left */
-  width: 300px;   /* length of line */
-  height: 6px;    /* thickness */
-  background-color: #0aeec8; /* same accent color */
-  transform: rotate(-26deg); /* slant effect (\ shape) */
-  transform-origin: left center; /* pivot from left */
-  animation: drawVerticalFooter2 1.5s ease-out forwards;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: calc(100% - 20px);
+  pointer-events: none;
+}
+
+/* base (hidden) states for segments */
+.horizontal-line,
+.vertical-line,
+.horizontal-line-2 {
+  background: rgba(255,255,255,0.95);
+  position: absolute;
+  border-radius: 4px;
+}
+
+/* First horizontal: starts from left, grows right */
+.horizontal-line {
+  top: 8px;         /* vertical offset inside wrapper */
+  left: 8px;
+  height: 4px;
+  width: 0;
+}
+
+/* Vertical: will appear at 75% from left of container */
+.vertical-line {
+  top: 8px;
+  left: 75%;        /* adjust this percent to control where the vertical drops */
+  width: 4px;
+  height: 0;
+  transform: translateX(-50%);
+}
+
+/* Second horizontal: positioned at bottom of vertical and grows leftwards */
+.horizontal-line-2 {
+  /* bottom position is set using the vertical final height; set top to match vertical final */
+  top: calc(8px + 120px); /* 120px is the vertical drop in this CSS — keep in sync */
+  right: 8%;
+  height: 4px;
+  width: 0;
+  transform-origin: right center; /* will expand leftwards */
+}
+
+/* --- ANIMATIONS: run only when wrapper has .animate --- */
+.line-wrapper.animate .horizontal-line {
+  animation: drawHorizontal 1s ease-out forwards;
+}
+
+.line-wrapper.animate .vertical-line {
+  animation: drawVertical 0.9s ease-out forwards;
+  animation-delay: 1.05s;
+}
+
+.line-wrapper.animate .horizontal-line-2 {
+  animation: drawHorizontal2 1s ease-out forwards;
+  animation-delay: 2.05s;
+}
+
+/* Keyframes */
+@keyframes drawHorizontal {
+  from { width: 0; }
+  to   { width: 75%; } /* matches the left:75% used on vertical */
+}
+@keyframes drawVertical {
+  from { height: 0; }
+  to   { height: 120px; } /* final vertical drop (keep in sync with top of horizontal-line-2) */
+}
+@keyframes drawHorizontal2 {
+  from { width: 0; }
+  to   { width: 60%; } /* expands leftwards since transform-origin is right */
+}
+
+/* --- Right-side text and button --- */
+.custom-btn {
+  background-color: #0aeec8;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.6rem 1.3rem;
+  transition: background-color 0.25s ease, transform .15s ease;
+}
+.custom-btn:hover {
+  background-color: purple;
+  transform: translateY(-3px);
+}
+
+/* Small screen tweaks */
+@media (max-width: 767.98px) {
+  .img-large { height: 180px; }
+  .img-small { height: 100px; }
+  .line-wrapper { height: 120px; }
+  .vertical-line { left: 72%; }
+  .line-wrapper.animate .horizontal-line { animation-duration: .9s; }
+  .line-wrapper.animate .vertical-line { animation-delay: 1s; animation-duration: .8s; }
+  .line-wrapper.animate .horizontal-line-2 { animation-delay: 1.9s; }
 }
 
 
-about-horizontal-2 {
+
+
+.teamup-section {
+  background: url("https://plus.unsplash.com/premium_photo-1682145327489-c84344d98779?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* makes it stay while scrolling */
+  position: relative;
+  color: #fff;
+}
+
+/* Optional: dark overlay to improve text readability */
+.teamup-section::before {
+  content: "";
   position: absolute;
-  bottom: 36rem;   /* adjust spacing from footer bottom */
-  left: 70rem;     /* adjust spacing from footer left */
-  width: 300px;   /* length of line */
-  height: 6px;    /* thickness */
-  background-color: #0aeec8; /* same accent color */
-  transform: rotate(-26deg); /* slant effect (\ shape) */
-  transform-origin: left center; /* pivot from left */
-  animation: drawVerticalFooter2 1.5s ease-out forwards;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  z-index: 1;
+}
+
+.teamup-section .container {
+  position: relative;
+  z-index: 2; /* put content above overlay */
+}
+
+/* Staggering classes */
+.stagger-up {
+  transform: translateY(-20px);
+}
+
+.stagger-down {
+  transform: translateY(20px);
+}
+
+@media (max-width: 991.98px) {
+  /* On smaller screens, remove staggering so layout stacks cleanly */
+  .stagger-up,
+  .stagger-down {
+    transform: none;
+  }
 }
 
 
+
+// -------------------Products -----------------------
+
+.parallax-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 0;
+}
+.parallax-section > .container {
+  position: relative;
+  z-index: 1;
+}

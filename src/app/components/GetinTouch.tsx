@@ -106,27 +106,7 @@ export default function GetinTouch() {
 
       {/* Middle - Images */}
       <div className="col-md-4 text-center position-relative">
-        <img
-          src="/images/about1.png"
-          alt="About Willez"
-          className="img-fluid mb-3 rounded-3 shadow-lg"
-          style={{ maxHeight: "280px", objectFit: "cover" }}
-        />
-        <div className="d-flex justify-content-center gap-3">
-          <img
-            src="/images/about2.png"
-            alt="Team"
-            className="img-fluid rounded-3 shadow-lg"
-            style={{ maxHeight: "180px", objectFit: "cover" }}
-          />
-          <img
-            src="/images/about3.png"
-            alt="Work"
-            className="img-fluid rounded-3 shadow-lg"
-            style={{ maxHeight: "180px", objectFit: "cover" }}
-          />
-        </div>
-        {/* Decorative vertical line */}
+        
         <div
           className="position-absolute top-0 start-0"
           style={{
