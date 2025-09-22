@@ -124,10 +124,11 @@ header.header-5 {
   border-radius: 20px; /* makes edges rounded */
   padding: 0.375rem 0.75rem; /* optional: adjust size */
   transition: background-color 0.25s ease, transform 0.2s ease;
+  text-decoration: none;
 }
 
 .navbar-custom .btn-allhover {
-  background-color: #08c9aa; /* slightly darker on hover */
+  background-color: #a3028e; /* slightly darker on hover */
   color: #fff;
   transform: translateY(-2px); /* optional subtle lift effect */
 }
@@ -136,34 +137,32 @@ header.header-5 {
 // body --> Home
 
     .arrow-section {
-      position: relative;
-      padding: 80px 0;
-      background-color: #f8f9fa; /* light background */
-    }
+    position: relative;
+    background: #f8f9fa; /* light bg to stand out */
+  }
 
-    /* Custom arrow */
-    .arrow-right {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-100px);
-      display: flex;
-      align-items: center;
-    }
+  .arrow-right {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+  }
 
-    .arrow-line {
-      height: 4px;
-      width: 250px; /* length of arrow line */
-      background-color: #0aeec8;
-    }
+  .arrow-line {
+    width: 200px; /* length of arrow shaft */
+    height: 4px;
+    background-color: #0aeec8;
+  }
 
-    .arrow-head {
-      width: 0;
-      height: 0;
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-left: 20px solid #0aeec8; /* arrowhead color */
-    }
+  .arrow-head {
+    width: 0;
+    height: 0;
+    border-left: 20px solid #0aeec8;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
 
     .btn {
         background-color: #0aeec8;
@@ -189,7 +188,7 @@ header.header-5 {
 // -------------------------------Leading the way-----------------------------------------------------------------
 
 
-.feature-section {
+.feature-section-home {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -199,22 +198,27 @@ header.header-5 {
   
 }
 
-.feature-left {
+.feature-left-home {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.blue-box {
+.blue-box-home {
   background-color: #091652;
   width: 610px;
+  //  width: 100%;
+  max-width: 610px;
   height: 610px;
   position: relative;
   border-radius: 16px;
+  aspect-ratio: 1 / 1;   /* keeps it a square */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: visible;
+  margin: 0 auto; /* center it */
+  
 }
 
 /* IMAGES */
@@ -223,6 +227,7 @@ header.header-5 {
   border-radius: 14px;
   box-shadow: 0 6px 16px rgba(184, 44, 44, 0.15);
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .img-large {
@@ -253,56 +258,64 @@ header.header-5 {
   right: 11rem;
 }
 
-/* --------------------------------LINE BESIDE BOX ------------------*/
-.horizontal-line,
-.vertical-line,
+/* --------------------------------LINE BESIDE BOX - HOME------------------*/
+.horizontal-line-home,
+.vertical-line-home,
 .horizontal-line-2 {
   width: 0;
   height: 0;
 }
 
 /* Animate only when .animate class is present */
-.line-container.animate .horizontal-line {
+/* Horizontal top line */
+.line-container.animate .horizontal-line-home {
   position: absolute;
-  top: 20px;
-  left: -30px;
+  top: 5%;
+  left: 0;
   height: 6px;
   background: #0aeec8;
   animation: drawHorizontal 2s ease-out forwards;
+  width: 0;
 }
 
-.line-container.animate .vertical-line {
+/* Vertical line */
+.line-container.animate .vertical-line-home {
   position: absolute;
-  top: 20px;
-  left: 83%;
+  top: 5%;
+  left: 85%;
   width: 6px;
   background: #0aeec8;
   animation: drawVertical 1.5s ease-out forwards;
   animation-delay: 2s;
+  height: 0;
 }
 
-.line-container.animate .horizontal-line-2 {
+/* Bottom horizontal line */
+.line-container.animate .horizontal-line-2-home {
   position: absolute;
-  top: 390px;
-  right: 100px;
+  bottom: 15%;   /* instead of hardcoded 390px */
+  right: 10%;    /* responsive */
   height: 6px;
   background: #0aeec8;
   animation: drawHorizontal2 2s ease-out forwards;
   animation-delay: 3.5s;
+  width: 0;
 }
 
+/* Animations */
 @keyframes drawHorizontal {
   from { width: 0; }
-  to   { width: 88%; }
+  to   { width: 85%; }
 }
 @keyframes drawVertical {
   from { height: 0; }
-  to   { height: 370px; }
-}
+  to   { height: 80%; }
+} 
 @keyframes drawHorizontal2 {
   from { width: 0; }
-  to   { width: 100%; }
+  to   { width: 90%; }
 }
+
 
 // ------------------end of deco lines
 
@@ -335,7 +348,7 @@ header.header-5 {
 }
 
 .btn-primary:hover {
-  background-color: #08c9aa;
+  background-color: rgb(129, 2, 129); 
   transform: translateY(-2px);
 }
 
@@ -364,7 +377,7 @@ header.header-5 {
   background-color: #0aeec8; /* same accent color */
   transform: rotate(26deg); /* slant effect (\ shape) */
   transform-origin: left center; /* pivot from left */
-  animation: drawHorizontal 3s ease-out forwards; 
+  animation: drawHorizontal-about 3s ease-out forwards; 
   animation-delay: 1.5s;
 }
 
@@ -383,40 +396,89 @@ header.header-5 {
 
 
 
-
-
 // -------------------About_------------------------------
 
 /* --- Blue box / images --- */
-.blue-box {
+.blue-box-about {
   background-color: #0aeec8;
-  border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   /* no fixed height so the box expands naturally with images + line-wrapper */
+  // position: absolute;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  width: 610px;
+  height: 610px;
 }
+  // background-color: #091652;
+  // width: 610px;
+  // height: 610px;
+  // position: relative;
+  // border-radius: 16px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // overflow: visible;
 
 /* image sizes - responsive */
-.img-large {
-  width: 100%;
-  height: 220px;
+.img-large-about {
+  width: 80%;
+  height: 80px;
+  top: -10px;
+  left: 20%;
   object-fit: cover;
   border-radius: 8px;
+  transform: translateY(-73%);
+
+  // width: 380px;
+  // height: 380px;
+  // top: -10px;
+  // left: 0%;
+  // transform: translateX(-50%);
+
 }
 
-.img-small {
+.img-medium-about {
   width: 100%;
   height: 120px;
-  object-fit: cover;
+  top: -70px;
+  left: 40%;
+  // object-fit: cover;
   border-radius: 8px;
+  // width: 180px;
+  // height: 100px;
+  // transform: translateX(-50%);
+   position: absolute;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(184, 44, 44, 0.15);
+  object-fit: cover;
 }
 
+.img-small-about {
+  width: 80%;
+  height: 120px;
+  top: -10px;
+  left: 40%;
+  // object-fit: cover;
+ position: absolute;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(184, 44, 44, 0.15);
+  object-fit: cover;  // border-radius: 8px;
+  // width: 180px;
+  // height: 100px;
+  // transform: translateX(-50%);
+}
+
+
 /* Adds a subtle shadow to images */
-.blue-box img {
+.blue-box-about img {
   box-shadow: 0 8px 28px rgba(0,0,0,0.12);
 }
 
 /* --- Line wrapper reserves space so the blue box includes it in flow --- */
-.line-wrapper {
+.line-wrapper-about {
   position: relative;
   width: 100%;
   height: 160px; /* reserve height for the animated path */
@@ -424,7 +486,7 @@ header.header-5 {
 }
 
 /* container that holds the three animated segments */
-.line-container {
+.line-container-about {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -434,68 +496,68 @@ header.header-5 {
 }
 
 /* base (hidden) states for segments */
-.horizontal-line,
-.vertical-line,
-.horizontal-line-2 {
-  background: rgba(255,255,255,0.95);
+.horizontal-line-about,
+.vertical-line-about,
+.horizontal-line-about-2 {
+  background: rgba(119, 9, 101, 0.95);
   position: absolute;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 /* First horizontal: starts from left, grows right */
-.horizontal-line {
+.horizontal-line-about {
   top: 8px;         /* vertical offset inside wrapper */
-  left: 8px;
+  left: 1px;
   height: 4px;
   width: 0;
 }
 
 /* Vertical: will appear at 75% from left of container */
-.vertical-line {
+.vertical-line-about {
   top: 8px;
-  left: 75%;        /* adjust this percent to control where the vertical drops */
+  left: 76%;        /* adjust this percent to control where the vertical drops */
   width: 4px;
   height: 0;
   transform: translateX(-50%);
 }
 
 /* Second horizontal: positioned at bottom of vertical and grows leftwards */
-.horizontal-line-2 {
+.horizontal-line-about-2 {
   /* bottom position is set using the vertical final height; set top to match vertical final */
-  top: calc(8px + 120px); /* 120px is the vertical drop in this CSS — keep in sync */
-  right: 8%;
+  top: calc(8px + 380px); /* 120px is the vertical drop in this CSS — keep in sync */
+  right: 23.8%;
   height: 4px;
   width: 0;
   transform-origin: right center; /* will expand leftwards */
 }
 
 /* --- ANIMATIONS: run only when wrapper has .animate --- */
-.line-wrapper.animate .horizontal-line {
-  animation: drawHorizontal 1s ease-out forwards;
+.line-wrapper.animate .horizontal-line-about {
+  animation: drawHorizontal-about 1s ease-out forwards;
 }
 
-.line-wrapper.animate .vertical-line {
-  animation: drawVertical 0.9s ease-out forwards;
+.line-wrapper.animate .vertical-line-about {
+  animation: drawVertical-about 0.9s ease-out forwards;
   animation-delay: 1.05s;
 }
 
-.line-wrapper.animate .horizontal-line-2 {
-  animation: drawHorizontal2 1s ease-out forwards;
+.line-wrapper.animate .horizontal-line-about-2 {
+  animation: drawHorizontal2-about 1s ease-out forwards;
   animation-delay: 2.05s;
 }
 
 /* Keyframes */
-@keyframes drawHorizontal {
+@keyframes drawHorizontal-about  {
   from { width: 0; }
-  to   { width: 75%; } /* matches the left:75% used on vertical */
+  to   { width: 76%; } /* matches the left:75% used on vertical */
 }
-@keyframes drawVertical {
+@keyframes drawVertical-about {
   from { height: 0; }
-  to   { height: 120px; } /* final vertical drop (keep in sync with top of horizontal-line-2) */
+  to   { height: 380px; } /* final vertical drop (keep in sync with top of horizontal-line-2) */
 }
-@keyframes drawHorizontal2 {
+@keyframes drawHorizontal2-about {
   from { width: 0; }
-  to   { width: 60%; } /* expands leftwards since transform-origin is right */
+  to   { width: 76%; } /* expands leftwards since transform-origin is right */
 }
 
 /* --- Right-side text and button --- */
@@ -508,7 +570,7 @@ header.header-5 {
   transition: background-color 0.25s ease, transform .15s ease;
 }
 .custom-btn:hover {
-  background-color: purple;
+  background-color: rgb(129, 2, 129);
   transform: translateY(-3px);
 }
 
@@ -522,9 +584,6 @@ header.header-5 {
   .line-wrapper.animate .vertical-line { animation-delay: 1s; animation-duration: .8s; }
   .line-wrapper.animate .horizontal-line-2 { animation-delay: 1.9s; }
 }
-
-
-
 
 .teamup-section {
   background: url("https://plus.unsplash.com/premium_photo-1682145327489-c84344d98779?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center;
@@ -580,3 +639,138 @@ header.header-5 {
   position: relative;
   z-index: 1;
 }
+
+
+// --------------------tech-------------------\\
+
+/* Container row */
+.reveal-row {
+  gap: 0;
+  overflow: hidden;
+  height: 580px;               /* adjust desired height */
+  align-items: stretch;
+}
+
+/* Individual panel (sliver default) */
+.panel {
+  flex: 0.12;                  /* default tiny width (4 panels: 0.12*4 = 0.48) */
+  min-width: 60px;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: flex 0.65s cubic-bezier(.2,.8,.2,1),
+              transform 0.5s ease,
+              box-shadow 0.35s ease;
+  position: relative;
+  cursor: pointer;
+  border-radius: 6px 0 0 6px;  /* small rounding - visual */
+  overflow: hidden;
+  box-shadow: inset 0 0 0 rgba(0,0,0,0.0);
+}
+
+/* When hovered or focused - expand big */
+.panel:hover,
+.panel:focus {
+  outline: none;
+  flex: 0.64;                  /* expanded portion (should sum to ~1.0) */
+  transform: translateX(-8px) scale(1.02); /* slight left slide & scale */
+  box-shadow: 0 12px 30px rgba(10,238,200,0.12);
+  z-index: 5;                  /* bring above neighbours */
+}
+
+/* overlay inside panel (dark gradient to improve readability) */
+.panel-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.12) 40%, rgba(0,0,0,0) 100%);
+  padding: 18px;
+  color: #fff;
+  pointer-events: none;
+}
+
+/* big faint number (corner) */
+.panel-number {
+  position: absolute;
+  left: 18px;
+  top: 16px;
+  font-size: 56px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 2px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateX(0);
+}
+
+/* content hidden until expanded */
+.panel-content {
+  opacity: 0;
+  transform: translateX(16px);
+  transition: opacity 0.35s ease 0.12s, transform 0.35s ease 0.12s;
+  pointer-events: none;
+}
+
+/* show content & number more prominently when panel is active */
+.panel:hover .panel-content,
+.panel:focus .panel-content {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.panel:hover .panel-number,
+.panel:focus .panel-number {
+  color: rgba(255,255,255,0.28);
+  transform: translateX(-6px);
+}
+
+/* small caption style */
+.panel-content h5 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.panel-content p {
+  margin: 0;
+  color: rgba(255,255,255,0.92);
+  opacity: 0.95;
+}
+
+/* keyboard focus style (visible) */
+.panel:focus {
+  box-shadow: 0 12px 30px rgba(10,238,200,0.14), 0 0 0 4px rgba(10,238,200,0.08);
+}
+
+/* make sure adjacent panels have no gap and look flush */
+.reveal-row .panel + .panel {
+  margin-left: -2px; /* tiny overlap to avoid hairline gap on some browsers */
+}
+
+/* MOBILE: stack panels normally for a usable UX */
+@media (max-width: 767.98px) {
+  .reveal-row {
+    flex-direction: column;
+    height: auto;
+  }
+  .panel {
+    flex: none;
+    width: 100%;
+    min-width: auto;
+    height: 200px;
+    transform: none !important;
+    margin-left: 0;
+    border-radius: 8px;
+  }
+  .panel-number { font-size: 34px; top: 12px; left: 12px; }
+  .panel-overlay { align-items: flex-end; padding: 12px; }
+  .panel-content { opacity: 1; transform: none; } /* show content on mobile */
+}
+
+
+
+
+

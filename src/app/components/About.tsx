@@ -31,28 +31,28 @@ export default function About() {
       <div className="row align-items-center">
         {/* LEFT: Blue box with images + animated line */}
         <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-          <div className="blue-box p-3">
+          <div className="blue-box-about p-3">
             {/* Images arranged with Bootstrap grid so the blue-box height grows naturally */}
             <div className="row g-2">
               <div className="col-12">
                 <img
                   src="assets/elements/img/solar1.png"
                   alt="Solar large"
-                  className="img-fluid rounded img-large"
+                  className="img-fluid rounded img-large-about"
                 />
               </div>
               <div className="col-6">
                 <img
                   src="assets/elements/img/solar2.png"
                   alt="Solar small 1"
-                  className="img-fluid rounded img-small"
+                  className="img-fluid rounded img-medium-about"
                 />
               </div>
               <div className="col-6">
                 <img
                   src="assets/elements/img/solar3.png"
                   alt="Solar small 2"
-                  className="img-fluid rounded img-small"
+                  className="img-fluid rounded img-small-about"
                 />
               </div>
             </div>
@@ -63,10 +63,10 @@ export default function About() {
               ref={lineRef}
               aria-hidden="true"
             >
-              <div className="line-container">
-                <div className="horizontal-line"></div>
-                <div className="vertical-line"></div>
-                <div className="horizontal-line-2"></div>
+              <div className="line-container-about">
+                <div className="horizontal-line-about"></div>
+                <div className="vertical-line-about"></div>
+                <div className="horizontal-line-about-2"></div>
               </div>
             </div>
           </div>
