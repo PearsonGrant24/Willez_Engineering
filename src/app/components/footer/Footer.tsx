@@ -9,7 +9,7 @@ export default function Footer() {
         <>
         <footer>   
                     
-            <div className="footer-4 footer-wrap" style={{background:'#313030'}}>           
+            <div className="footer-4 footer-wrap" style={{background:'#040a53ea'}}>           
                 
                 
                    <div className="footer-line-slant-1"></div> 
@@ -43,14 +43,14 @@ export default function Footer() {
                                     </div>
 
                                     <ul>
-                                        <li><a href="#Backpacks">House Wiring</a></li>
-                                        <li><a href="#Sportsbags">Solar system fix & supply</a></li>
-                                        <li><a href="#Luggagebags">Electrical components</a></li>
-                                        <li><a href="#Coolerbags">Electrical specing</a></li>
-                                        <li><a href="#Luggagebags">Circuit wiring/rewiring</a></li>
-                                        <li><a href="#Backpacks">Earthing</a></li>
-                                        <li><a href="#Coolerbags">Pencil cases</a></li>
-                                        <li><a href="#Luggagebags">Electrical related faults</a></li>
+                                        <li><a href="#Products">House Wiring</a></li>
+                                        <li><a href="Products">Solar system fix & supply</a></li>
+                                        <li><a href="#Products">Electrical components</a></li>
+                                        <li><a href="#Products">Electrical specing</a></li>
+                                        <li><a href="#Products">Circuit wiring/rewiring</a></li>
+                                        <li><a href="#Products">Earthing</a></li>
+                                        <li><a href="#Products">Pencil cases</a></li>
+                                        <li><a href="#Products">Electrical related faults</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@ export default function Footer() {
                 </div>           
                 <div className="relative bg-black text-white py-10">
                     <div className="container mx-auto text-center">
-                        <p>© 2025 Your Company. All rights reserved.</p></div>
+                        <p>© 2025 Willez Engineering. All rights reserved.</p></div>
                     </div>    
             </footer>          
         </>

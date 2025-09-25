@@ -36,8 +36,6 @@ export default function Header() {
   const Home = () => {
     navigate("/Home");
   };
-  
-  
 
   return (
     <>
