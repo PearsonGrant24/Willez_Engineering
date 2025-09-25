@@ -44,7 +44,14 @@ export default function Header() {
       <nav ref={navRef} className="navbar navbar-expand-lg navbar-custom nav-top">
         <div className="container">
           {/* Logo */}
-          <a className="navbar-brand me-4" href="/">Willez</a>
+          <a className="navbar-brand d-flex align-items-center" href="/">
+            <img 
+              src="assets/elements/logos/willez-logo.png" 
+              alt="Willez Logo" 
+              className="img-fluid"
+              style={{ maxHeight: "50px" }} 
+            />
+          </a>
 
           {/* Mobile toggle */}
           <button
