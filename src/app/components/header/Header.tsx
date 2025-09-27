@@ -10,9 +10,9 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 
    const heroImages = [
-      "assets/elements/img/barner/double-harvest.jpg",
-      "assets/elements/img/solar-roof.jpg",
-      "assets/elements/img/man-fixing-solar.png",
+      "assets/elements/img/banner/double-harvest.jpg",
+      "assets/elements/img/banner/barner1.png",
+      "assets/elements/img/banner/banner2.png",
       // "https://cdn.prod.website-files.com/64c6e4021257dfdf4b2f57d1/65a9564ee64da3b66c471ecb_mischa-frank-6M9OhcblUHM-unsplash%201%20(18).png"
     ];
   
@@ -133,7 +133,7 @@ const [currentImage, setCurrentImage] = useState(0);
               <li className="nav-item"><a className="nav-link" href="/Solutions">Solutions</a></li>
               <li className="nav-item"><a className="nav-link" href="Experience">Experience & Insights</a></li>
               <li className="nav-item">
-                <a className="btn btn-all ms-3" href="GetinTouch">Get in Touch</a>
+                <button className="btn-all btn-primary ms-3" href="GetinTouch">Get in Touch</button>
               </li>
               </ul>
             </div>
