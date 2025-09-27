@@ -210,42 +210,46 @@
 }
 
 .blue-box-home {
-  background-color: #091652;
-  width: 610px;
-  //  width: 100%;
+background-color: #091652;
+  width: 100%;
   max-width: 610px;
-  height: 610px;
-  position: relative;
+  height: auto;
+  aspect-ratio: 1/1; /* keeps square shape */
   border-radius: 16px;
-  aspect-ratio: 1 / 1;   /* keeps it a square */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: visible;
-  margin: 0 auto; /* center it */
+
   
 }
 
 /* IMAGES */
-.feature-img {
-  position: absolute;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(184, 44, 44, 0.15);
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
+// .feature-img {
+//   position: absolute;
+//   border-radius: 14px;
+//   box-shadow: 0 6px 16px rgba(184, 44, 44, 0.15);
+//   object-fit: cover;
+//   transition: transform 0.3s ease;
+// }
 
 .img-large {
-  width: 380px;
-  height: 380px;
-  top: -50px;
-  left: 40%;
+  // width: 340px;
+  // height: 340px;
+  // top: -40px;
+  // left: 40%;
+  // transform: translateX(-40%);
+  width: 60%;
+  height: auto;
+  top: -40px;
+  left: 50%;
   transform: translateX(-50%);
 }
 
 .img-small {
-  width: 120px;
-  height: 100px;
+  bottom: 15%;
+  left: 5%;
+  z-index: 3;
 }
 
 .img-bottom-left {

@@ -43,7 +43,7 @@ export default function Home() {
                 panel systems, efficient storage, and smart grid integration for a
                 sustainable future.
               </p>
-              <button className="btn-all btn-primary btn-lg">Learn More</button>
+              <button className="btn-all btn-primary btn-lg">Our Solutions More</button>
             </div>
           </div>
         </div>
@@ -61,16 +61,16 @@ export default function Home() {
 
     <div className="row g-4">
       {[
-        { title: "Installation", link: "/installation" },
-        { title: "Battery Storage", link: "/battery-storage" },
-        { title: "Maintenance", link: "/maintenance" },
+        { title: "Installation", link: "/installation", img: "assets/elements/img/BackGSolar.jpeg" },
+        { title: "Battery Storage", link: "/battery-storage", img: "assets/elements/img/clean1.png" },
+        { title: "Maintenance", link: "/maintenance", img: "assets/elements/img/solar3.png" },
       ].map((item, i) => (
         <div className="col-12 col-md-4" key={i}>
           <div className="card h-100 shadow">
             {/* ✅ Clickable image */}
             <a href={item.link}>
               <img
-                src="assets/elements/img/BackGSolar.jpeg"
+                src={item.img}
                 className="card-img-top img-fluid"
                 alt={item.title}
               />
@@ -91,7 +91,8 @@ export default function Home() {
       ))}
     </div>
   </div>
-      </div>
+</div>
+
 
 
       {/* Features Section */}
@@ -141,7 +142,7 @@ export default function Home() {
       <section
             className="parallax-section text-center text-white d-flex align-items-center justify-content-center"
             style={{
-                backgroundImage: "url('assets/elements/img/AdobeStock_13.jpeg')",
+                backgroundImage: "url('assets/elements/img/SolarPanelsInvertersInstallation.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundAttachment: "fixed", // makes the background "stay" while scrolling
