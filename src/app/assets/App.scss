@@ -2,26 +2,89 @@
 // /-----------------NAV -----------------------------------------------------
 
 /* Navbar fixed and transparent at top */
-.hero {
+// .hero {
+//   min-height: 90vh;
+//   background: url('https://cdn.prod.website-files.com/64c6e4021257dfdf4b2f57d1/65a9564ee64da3b66c471ecb_mischa-frank-6M9OhcblUHM-unsplash%201%20(18).png') center/cover no-repeat;
+//   position: relative; /* allows absolute positioning for navbar */
+//   z-index: 0;
+// }
+// .hero::after {
+//   content: "";
+//   position: absolute;
+//   inset: 0;
+//   background: rgba(0,0,0,0.35);
+// }
+
+// .hero-content h1,
+// .hero-content p {
+//   color: #fff !important;
+//   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6); /* makes text pop */
+//   z-index: 2;
+//   position: relative;
+// }
+
+
+
+.hero-banner {
+  position: relative;
   min-height: 90vh;
-  background: url('https://cdn.prod.website-files.com/64c6e4021257dfdf4b2f57d1/65a9564ee64da3b66c471ecb_mischa-frank-6M9OhcblUHM-unsplash%201%20(18).png') center/cover no-repeat;
-  position: relative; /* allows absolute positioning for navbar */
-  z-index: 0;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
+  background-size: cover;
+  background-position: center center; /* ✅ Always center the image */
+  background-attachment: fixed; /* parallax */
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.hero-content h1,
-.hero-content p {
-  color: #fff !important;
-  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6); /* makes text pop */
-  z-index: 2;
-  position: relative;
+@media (max-width: 768px) {
+  .hero-banner {
+    min-height: 70vh; /* shorter hero for mobile */
+    background-position: center top; /* ✅ shift focus upward */
+    background-attachment: scroll; /* ⚡ fix for iOS (no parallax) */
+  }
 }
+
+
+.hero-banner .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* darken for better text contrast */
+  z-index: 1;
+}
+
+.hero-banner .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-banner h1,
+.hero-banner p {
+  color: #fff;
+}
+
+.hero-banner button {
+  background-color: #0aeec8;
+  border: none;
+  border-radius: 25px;
+  padding: 0.6rem 1.5rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-banner button:hover {
+  background-color: #08c9aa;
+  transform: translateY(-3px);
+}
+
+
+
+
+
+
+
+
 
 /* Navbar overlaying hero at top */
 .navbar-custom {

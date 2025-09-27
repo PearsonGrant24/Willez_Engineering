@@ -7,6 +7,17 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
+
+
+   const heroImages = [
+      "assets/elements/img/barner/double-harvest.jpg",
+      "assets/elements/img/solar-roof.jpg",
+      "assets/elements/img/man-fixing-solar.png",
+      // "https://cdn.prod.website-files.com/64c6e4021257dfdf4b2f57d1/65a9564ee64da3b66c471ecb_mischa-frank-6M9OhcblUHM-unsplash%201%20(18).png"
+    ];
+  
+
+
 export default function Header() {
   const navigate = useNavigate();
   const navRef = useRef(null);
@@ -37,11 +48,26 @@ export default function Header() {
     navigate("/Home");
   };
 
+
+
+const [currentImage, setCurrentImage] = useState(0);
+
+  // Auto-slide every 6s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
+
   return (
     <>
      
-     {/* Navbar */}
-      <nav ref={navRef} className="navbar navbar-expand-lg navbar-custom nav-top">
+     
+       
+
+      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
           {/* Logo */}
           <a className="navbar-brand d-flex align-items-center" href="/">
@@ -51,22 +77,40 @@ export default function Header() {
               className="img-fluid"
               style={{ maxHeight: "50px" }} 
             />
-          </a>
+          </a> 
 
-          {/* Mobile toggle */}
+          {/* Toggler for offcanvas */}
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          {/* Nav links */}
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto align-items-center gap-3">
-              <li className="nav-item"><a className="nav-link" href="/About">About</a></li>
+          {/* Offcanvas sidebar */}
+          <div
+            className="offcanvas offcanvas-end"
+            tabIndex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div className="offcanvas-header">
+              <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
+                Menu
+              </h5>
+              <button
+                type="button"
+                className="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="offcanvas-body">
+              <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li className="nav-item"><a className="nav-link" href="/About">About</a></li>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -93,18 +137,31 @@ export default function Header() {
               <li className="nav-item">
                 <a className="btn btn-all ms-3" href="GetinTouch">Get in Touch</a>
               </li>
-            </ul>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
 
+
       {/* Hero section */}
-      <header className="hero d-flex align-items-center justify-content-center text-center">
-        <div className="hero-content">
-          <h1 className="display-5 fw-bold mb-3">Powering a Brighter Future</h1>
-          <p className="lead mb-0">High-efficiency solar, smart storage & reliable engineering.</p>
-        </div>
-      </header>
+      <section
+      className="hero-banner d-flex align-items-center justify-content-center text-center text-white"
+      style={{
+        backgroundImage: `url(${heroImages[currentImage]})`,
+      }}
+    >
+      <div className="overlay"></div>
+      <div className="container position-relative">
+        <h1 className="display-4 fw-bold">
+          Powering a Brighter Future
+        </h1>
+        <p className="lead">
+          High-efficiency solar, smart storage & reliable engineering
+        </p>
+        <button className="btn btn-lg btn-primary mt-3">Learn More</button>
+      </div>
+    </section>
 
 
     </>

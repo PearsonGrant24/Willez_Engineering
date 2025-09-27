@@ -1,10 +1,23 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
-export const HomePageSlider:React.FunctionComponent = () : any | null => {
+export default function HomePageSlider() {
     
-    const  [slides, setSlides] = useState<any>([1,2,3,4,5]);
+    const images = [
+    "assets/elements/img/hero1.jpg",
+    "assets/elements/img/hero2.jpg",
+    "assets/elements/img/hero3.jpg",
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 5000); // change every 5s
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>

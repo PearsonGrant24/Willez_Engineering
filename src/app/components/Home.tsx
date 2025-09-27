@@ -115,6 +115,26 @@ export default function Home() {
             </div>
           </div>
 
+<section
+      className="parallax-section text-center text-white d-flex align-items-center justify-content-center"
+      style={{
+        backgroundImage: "url('assets/elements/img/AdobeStock_13.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed", // makes the background "stay" while scrolling
+        minHeight: "60vh",
+      }}
+    >
+      <div className="container">
+        <h1 className="display-4 fw-bold mb-3">A Class & Market-Certified Solution</h1>
+        <p className="lead mb-0">
+          High-performance solar technology designed for modern energy needs.
+        </p>
+      </div>
+    </section>
+
+
+
           {/* Right - text */}
           <div className="col-12 col-lg-5 offset-lg-1 text-center text-lg-start">
             <h2 className="fw-bold mb-3">Leading the way</h2>
