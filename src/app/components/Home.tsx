@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       {/* Section with Arrow */}
-      <section className="arrow-section py-5">
+      <div className="arrow-section py-5">
         <div className="container">
           <div className="row align-items-center text-center text-md-start">
             {/* Arrow column */}
@@ -47,44 +47,52 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Cards Section */}
-      <section className="bg-section text-center py-5">
-        <div className="bg-overlay"></div>
-        <div className="bg-content container">
-          <h1 className="display-5 fw-bold mb-5">
-            Clean, Efficient Solar Energy
-          </h1>
+      <div className="bg-section text-center py-5">
+  <div className="bg-overlay"></div>
 
-          <div className="row g-4">
-            {["Installation", "Battery Storage", "Maintenance"].map(
-              (title, i) => (
-                <div className="col-12 col-md-4" key={i}>
-                  <div className="card h-100 shadow">
-                    <img
-                      src="assets/elements/img/BackGSolar.jpeg"
-                      className="card-img-top img-fluid"
-                      alt={title}
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">{title}</h5>
-                      <p className="card-text">
-                        {i === 0 &&
-                          "Professional solar panel installation services to power your future."}
-                        {i === 1 &&
-                          "Store energy efficiently with our advanced battery solutions."}
-                        {i === 2 &&
-                          "Reliable maintenance to keep your system running at peak performance."}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )
-            )}
+  {/* ✅ Move content above overlay with higher z-index */}
+  <div className="bg-content container position-relative">
+    <h1 className="display-5 fw-bold mb-5 text-white">
+      Clean, Efficient Solar Energy
+    </h1>
+
+    <div className="row g-4">
+      {[
+        { title: "Installation", link: "/installation" },
+        { title: "Battery Storage", link: "/battery-storage" },
+        { title: "Maintenance", link: "/maintenance" },
+      ].map((item, i) => (
+        <div className="col-12 col-md-4" key={i}>
+          <div className="card h-100 shadow">
+            {/* ✅ Clickable image */}
+            <a href={item.link}>
+              <img
+                src="assets/elements/img/BackGSolar.jpeg"
+                className="card-img-top img-fluid"
+                alt={item.title}
+              />
+            </a>
+            <div className="card-body">
+              <h5 className="card-title">{item.title}</h5>
+              <p className="card-text">
+                {i === 0 &&
+                  "Professional solar panel installation services to power your future."}
+                {i === 1 &&
+                  "Store energy efficiently with our advanced battery solutions."}
+                {i === 2 &&
+                  "Reliable maintenance to keep your system running at peak performance."}
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+      </div>
+
 
       {/* Features Section */}
       <div className="container py-5">
@@ -115,24 +123,7 @@ export default function Home() {
             </div>
           </div>
 
-<section
-      className="parallax-section text-center text-white d-flex align-items-center justify-content-center"
-      style={{
-        backgroundImage: "url('assets/elements/img/AdobeStock_13.jpeg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed", // makes the background "stay" while scrolling
-        minHeight: "60vh",
-      }}
-    >
-      <div className="container">
-        <h1 className="display-4 fw-bold mb-3">A Class & Market-Certified Solution</h1>
-        <p className="lead mb-0">
-          High-performance solar technology designed for modern energy needs.
-        </p>
-      </div>
-    </section>
-
+        
 
 
           {/* Right - text */}
@@ -146,6 +137,25 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <section
+            className="parallax-section text-center text-white d-flex align-items-center justify-content-center"
+            style={{
+                backgroundImage: "url('assets/elements/img/AdobeStock_13.jpeg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundAttachment: "fixed", // makes the background "stay" while scrolling
+                minHeight: "60vh",
+            }}
+            >
+            <div className="container">
+                <h1 className="display-4 fw-bold mb-3">A Class & Market-Certified Solution</h1>
+                <p className="lead mb-0">
+                High-performance solar technology designed for modern energy needs.
+                </p>
+            </div>
+            </section>
+
     </>
   );
 }

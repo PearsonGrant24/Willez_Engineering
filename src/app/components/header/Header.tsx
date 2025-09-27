@@ -17,7 +17,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
     ];
   
 
-
 export default function Header() {
   const navigate = useNavigate();
   const navRef = useRef(null);
@@ -63,9 +62,8 @@ const [currentImage, setCurrentImage] = useState(0);
 
   return (
     <>
-     
-     
-       
+          
+
 
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
