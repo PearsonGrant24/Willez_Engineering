@@ -52,7 +52,7 @@ export default function SolarProducts() {
       {/* Card 2 */}
       <div className="col-md-4">
         <div className="card h-100 shadow-sm border-0">
-          <img src="assets/elements/img/solaronrack.jpg" className="card-img-top" alt="Electrical Components" />
+          <img src="assets/elements/img/Electrical-products.png" className="card-img-top" alt="Electrical Components" />
           <div className="card-body text-center">
             <h5 className="card-title">Electrical Components</h5>
             <p className="card-text">Reliable components designed to power your projects.</p>

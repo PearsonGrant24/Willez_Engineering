@@ -27,7 +27,7 @@ export default function About() {
     {/* <HomePageSlider/> */}
 
      
-    <section className="container about-section py-5">
+    <div className="container about-section py-5">
       <div className="row align-items-center">
         {/* LEFT: Blue box with images + animated line */}
         <div className="col-12 col-lg-6 mb-4 mb-lg-0">
@@ -76,14 +76,14 @@ export default function About() {
         <div className="col-12 col-lg-6 text-center text-lg-start">
           <h2 className="fw-bold mb-3">Delivering good quality products for the country</h2>
           <p className="text-muted mb-4">
-            We provide reliable solar solutions that combine efficiency,
-            durability, and innovation to power a brighter future. Our
+            We specialise in all electrical power supplies, reliable solar solutions that combine efficiency,
+            durability, installations and innovation to power a brighter future. Our
             commitment is to bring sustainable energy to communities nationwide.
           </p>
-          <button className="btn custom-btn">Learn More</button>
+          {/* <button className="tn-all btn-primary btn-lg">Learn More</button> */}
         </div>
       </div>
-    </section>
+    </div>
 
     <section className="teamup-section text-white">
       <div className="container py-5">
@@ -130,11 +130,37 @@ export default function About() {
                   className="img-fluid stagger-up rounded shadow-sm"
                 />
               </div>
+
+              {/* Hexagon made from 6 separate edges (each is a <path>) */}
+<svg
+  className="hexagon-svg"
+  viewBox="0 0 200 200"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+>
+  {/* Points used (flat-top hexagon, R=80, center 100,100):
+      P1 = 180,100
+      P2 = 140,169.28
+      P3 = 60,169.28
+      P4 = 20,100
+      P5 = 60,30.72
+      P6 = 140,30.72
+  */}
+  <path className="hex-line-1" d="M180 100 L140 169.28" />
+  <path className="hex-line-2" d="M140 169.28 L60 169.28" />
+  <path className="hex-line-3" d="M60 169.28 L20 100" />
+  <path className="hex-line-4" d="M20 100 L60 30.72" />
+  <path className="hex-line-5" d="M60 30.72 L140 30.72" />
+  <path className="hex-line-6" d="M140 30.72 L180 100" />
+</svg>
+
             </div>
           </div>
         </div>
       </div>
     </section>
+    
 <section className="py-5 bg-light text-dark">
       <div className="container text-center">
         <h2 className="fw-bold mb-4">Our Purpose & Vision</h2>
