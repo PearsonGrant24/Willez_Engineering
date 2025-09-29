@@ -6,6 +6,7 @@ import About from '../components/About.tsx';
 import GetinTouch from '../components/GetinTouch.tsx';
 import SolarProducts from '../components/SolarProducts.tsx';
 import Technology from '../components/Technology.tsx';
+import Solutions from '../components/Solutions.tsx';
 
 
 const RoutePath = () => {
@@ -21,6 +22,7 @@ const RoutePath = () => {
 		<Route path="/GetinTouch" element={<GetinTouch />} />
 		<Route path="/SolarProducts" element={<SolarProducts />} />
 		<Route path="/technology" element={<Technology/>} />
+		<Route path="/Solutions" element={<Solutions/>} />
 
         </Routes>
 		

@@ -781,225 +781,109 @@ background-color: #091652;
 
 
 // --------------------------------------------------------------------
-// ----------------------
-// Hexagon styling - editable variables
-// --
-// teamup-section.scss
-// Full SCSS for the TeamUp section (images + hexagon SVG lines + glow)
-
-/* -------------------------
-   Config / variables
-   ------------------------- */
-$hex-color: #0aeec8;
-$hex-stroke: 3px;
-$hex-width: 200px;      // visual size of the SVG (adjust scale)
-$hex-right: 5%;         // horizontal offset from right
-$hex-bottom: 10%;       // vertical offset from bottom
-$dash-length: 260;      // stroke-dasharray/dashoffset (adjust if you scale hex-size)
-$draw-duration: 0.9s;
-$draw-ease: cubic-bezier(.2,.8,.2,1);
-$glow-duration: 3s;
-
-/* -------------------------
-   TeamUp section base
-   ------------------------- */
-.teamup-section {
-  position: relative;
-  overflow: visible;
-  // keep main content above the svg
-  .container {
-    position: relative;
-    z-index: 2;
-  }
-
-  // Typography / colours (section is text-white in markup, but allow overrides)
-  color: #fff;
-
-  // Images grid (right column)
-  .image-grid {
-    position: relative;
-    // remove gaps between images (Bootstrap grid handles spacing)
-    > .col-6 {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-    }
-  }
-
-  .stagger-up {
-    display: block;
-    transform: translateY(-18px);
-    transition: transform 350ms ease;
-  }
-
-  .stagger-down {
-    display: block;
-    transform: translateY(18px);
-    transition: transform 350ms ease;
-  }
-
-  // hover/focus animation to slightly lift images
-  .image-grid img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 360ms ease, box-shadow 360ms ease;
-    will-change: transform;
-    backface-visibility: hidden;
-  }
-
-  .image-grid img:hover,
-  .image-grid img:focus {
-    transform: translateY(0) scale(1.02);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-  }
-
-  // remove the vertical offset on smaller screens for better stacking
-  @media (max-width: 991.98px) {
-    .stagger-up,
-    .stagger-down {
-      transform: none !important;
-    }
-    .image-grid img { transform: none !important; }
-  }
-}
-
-/* -------------------------
-   Hexagon SVG and per-line control
-   ------------------------- */
-/* The SVG we use should be inserted as:
-   <svg className="hexagon-svg" viewBox="0 0 200 200"> ... </svg>
-   with six <path className="hex-line-N" d="..."/> children.
-*/
-.hexagon-svg {
+/* ===== Hexagon Frame Lines ===== */
+.hexagon-line-section {
   position: absolute;
-  width: $hex-width;
-  height: $hex-width;
-  right: $hex-right;
-  bottom: $hex-bottom;
-  z-index: 1;               // under the content (container has z-index:2)
-  pointer-events: none;
-  overflow: visible;
-  transform-origin: center center;
-
-  // responsive scale-down
-  @media (max-width: 768px) {
-    width: ($hex-width * 0.7);
-    height: ($hex-width * 0.7);
-    right: 6%;
-    bottom: 8%;
-  }
-
-  // default appearance for each edge
-  path {
-    fill: none;
-    stroke: $hex-color;
-    stroke-width: $hex-stroke;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    vector-effect: non-scaling-stroke;  // keeps stroke width even on scaling
-    stroke-dasharray: $dash-length;
-    stroke-dashoffset: $dash-length;
-    opacity: 0;
-    // initial subtle glow (will be enhanced by the animation)
-    filter: drop-shadow(0 0 3px rgba($hex-color, 0.08));
-  }
-
-  // ---------- individual edges (so you can tweak each separately) ----------
-  // Each edge runs the draw animation (stroke reveal) and then runs the
-  // glow/pulse animation repeatedly (the glow start is delayed slightly).
-  .hex-line-1 {
-    // P1 -> P2 (top-right slant)
-    animation: hex-draw $draw-duration $draw-ease forwards,
-               hex-glow $glow-duration ease-in-out infinite ($draw-duration + 0.1s);
-    animation-delay: 0s, ($draw-duration + 0.1s);
-  }
-  .hex-line-2 {
-    // P2 -> P3 (right-bottom)
-    animation: hex-draw $draw-duration $draw-ease forwards,
-               hex-glow $glow-duration ease-in-out infinite ($draw-duration + 0.18s);
-    animation-delay: 0.08s, ($draw-duration + 0.18s);
-  }
-  .hex-line-3 {
-    // P3 -> P4 (bottom-right slant)
-    animation: hex-draw $draw-duration $draw-ease forwards,
-               hex-glow $glow-duration ease-in-out infinite ($draw-duration + 0.26s);
-    animation-delay: 0.16s, ($draw-duration + 0.26s);
-  }
-  .hex-line-4 {
-    // P4 -> P5 (bottom-left slant)
-    animation: hex-draw $draw-duration $draw-ease forwards,
-               hex-glow $glow-duration ease-in-out infinite ($draw-duration + 0.34s);
-    animation-delay: 0.24s, ($draw-duration + 0.34s);
-  }
-  .hex-line-5 {
-    // P5 -> P6 (left-top)
-    animation: hex-draw $draw-duration $draw-ease forwards,
-               hex-glow $glow-duration ease-in-out infinite ($draw-duration + 0.42s);
-    animation-delay: 0.32s, ($draw-duration + 0.42s);
-  }
-  .hex-line-6 {
-    // P6 -> P1 (top-left slant)
-    animation: hex-draw $draw-duration $draw-ease forwards,
-               hex-glow $glow-duration ease-in-out infinite ($draw-duration + 0.5s);
-    animation-delay: 0.40s, ($draw-duration + 0.5s);
-  }
+  background: rgba(9, 115, 119, 0.95);
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(6, 206, 39, 0.9),
+              0 0 16px rgba(119, 9, 101, 0.7),
+              0 0 24px rgba(119, 9, 101, 0.5);
 }
 
-/* -------------------------
-   Animations
-   ------------------------- */
-/* stroke draw (reveals the dash) */
-@keyframes hex-draw {
-  0% {
-    stroke-dashoffset: $dash-length;
-    opacity: 0;
-  }
-  30% {
-    opacity: 0.9;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
+/* Top horizontal */
+.hex-line-top-section {
+  top: 100%;
+  left: 50%;
+  height: 4px;
+  width: 0;
+  transform: translateX(-50%);
+  animation: grow-horizontal-section 1.5s ease-out forwards,
+             glow-pulse-section 2.5s infinite ease-in-out;
 }
 
-/* glow/pulse (continuous after the draw) */
-@keyframes hex-glow {
+/* Upper left diagonal */
+.hex-line-upper-left-section {
+  top: 52px;
+  left: calc(50% - 100px);
+  width: 0;
+  height: 4px;
+  transform: rotate(-60deg);
+  transform-origin: left center;
+  animation: grow-diagonal-section 1.5s ease-out 0.5s forwards,
+             glow-pulse-section 2.5s infinite ease-in-out 0.5s;
+}
+
+/* Upper right diagonal */
+.hex-line-upper-right-section {
+  top: 52px;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  transform: rotate(60deg);
+  transform-origin: left center;
+  animation: grow-diagonal-section 1.5s ease-out 1s forwards,
+             glow-pulse-section 2.5s infinite ease-in-out 1s;
+}
+
+/* Bottom horizontal */
+.hex-line-bottom-section {
+  bottom: 50px;
+  left: 50%;
+  height: 4px;
+  width: 0;
+  transform: translateX(-50%);
+  animation: grow-horizontal-section 1.5s ease-out 2.5s forwards,
+             glow-pulse-section 2.5s infinite ease-in-out 2.5s;
+}
+
+/* Lower left diagonal */
+.hex-line-lower-left-section {
+  bottom: 52px;
+  left: calc(50% - 100px);
+  width: 0;
+  height: 4px;
+  transform: rotate(60deg);
+  transform-origin: left center;
+  animation: grow-diagonal-section 1.5s ease-out 1.5s forwards,
+             glow-pulse-section 2.5s infinite ease-in-out 1.5s;
+}
+
+/* Lower right diagonal */
+.hex-line-lower-right-section {
+  bottom: 52px;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  transform: rotate(-60deg);
+  transform-origin: left center;
+  animation: grow-diagonal-section 1.5s ease-out 2s forwards,
+             glow-pulse-section 2.5s infinite ease-in-out 2s;
+}
+
+/* ===== Animations ===== */
+@keyframes glow-pulse-section {
   0%, 100% {
-    filter: drop-shadow(0 0 4px rgba($hex-color, 0.12));
-    opacity: 0.9;
+    box-shadow: 0 0 8px rgba(78, 233, 16, 0.9),
+                0 0 16px rgba(119, 9, 101, 0.7),
+                0 0 24px rgba(119, 9, 101, 0.5);
   }
   50% {
-    filter: drop-shadow(0 0 16px rgba($hex-color, 0.30));
-    opacity: 1;
+    box-shadow: 0 0 16px rgba(119, 9, 101, 1),
+                0 0 32px rgba(119, 9, 101, 0.9),
+                0 0 48px rgba(119, 9, 101, 0.7);
   }
 }
 
-/* -------------------------
-   Helpful utilities / overrides
-   ------------------------- */
-/* You might want the hex to be behind images; ensure images / text have higher z-index */
-.teamup-section .image-grid,
-.teamup-section h2,
-.teamup-section p {
-  position: relative;
-  z-index: 3;
+@keyframes grow-horizontal-section {
+  from { width: 0; }
+  to { width: 200px; }
 }
 
-/* If you want to manually trigger the animation only when section becomes visible:
-   add `.play-hex` to `.hexagon-svg` (JS: intersectionObserver -> add class "play-hex")
-   and change the above .hex-line-N animations to run only when .hexagon-svg.play-hex path { ... }
-   I left animations as auto-run (they start on load) but you can wire them to play on scroll. */
-
-/* -------------------------
-   Notes:
-   - If you scale $hex-width a lot, increase $dash-length to match actual edge length.
-     A quick heuristic: for a flat-top hexagon with width W, each edge ≈ (W * 0.42).
-     So dash-length ≈ edge_length (e.g. if W=200, edge≈84 → dash ≈ 84). We use larger value
-     to be safe; tweak $dash-length so the draw is smooth (no visual snapping).
-   - To stop the glow after some time, remove the infinite keyword from hex-glow animations.
-   - To change glow color or intensity, adjust rgba($hex-color, X) values in keyframes.
-*/
+@keyframes grow-diagonal-section {
+  from { width: 0; }
+  to { width: 115px; }
+}
 
 
-
+// --------------------------------------------------------------------------------
