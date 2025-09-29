@@ -51,49 +51,47 @@ export default function Home() {
 
       {/* Cards Section */}
       <div className="bg-section text-center py-5">
-  <div className="bg-overlay"></div>
+        <div className="bg-overlay"></div>
 
-  {/* ✅ Move content above overlay with higher z-index */}
-  <div className="bg-content container position-relative">
-    <h1 className="display-5 fw-bold mb-5 text-white">
-      Clean, Efficient Solar Energy
-    </h1>
+        {/* ✅ Move content above overlay with higher z-index */}
+        <div className="bg-content container position-relative">
+          <h1 className="display-5 fw-bold mb-5 text-white">
+            Clean, Efficient Solar Energy
+          </h1>
 
-    <div className="row g-4">
-      {[
-        { title: "Installation", link: "/installation", img: "assets/elements/img/BackGSolar.jpeg" },
-        { title: "Battery Storage", link: "/battery-storage", img: "assets/elements/img/Pixels-solar-battery2.png" },
-        { title: "Maintenance", link: "/maintenance", img: "assets/elements/img/clean3.png" },
-      ].map((item, i) => (
-        <div className="col-12 col-md-4" key={i}>
-          <div className="card h-100 shadow">
-            {/* ✅ Clickable image */}
-            <a href={item.link}>
-              <img
-                src={item.img}
-                className="card-img-top img-fluid"
-                alt={item.title}
-              />
-            </a>
-            <div className="card-body">
-              <h5 className="card-title">{item.title}</h5>
-              <p className="card-text">
-                {i === 0 &&
-                  "Professional solar panel installation services to power your future."}
-                {i === 1 &&
-                  "Store energy efficiently with our advanced battery solutions."}
-                {i === 2 &&
-                  "Reliable maintenance to keep your system running at peak performance."}
-              </p>
-            </div>
+          <div className="row g-4">
+            {[
+              { title: "Installation", link: "/installation", img: "assets/elements/img/BackGSolar.jpeg" },
+              { title: "Battery Storage", link: "/battery-storage", img: "assets/elements/img/Pixels-solar-battery2.png" },
+              { title: "Maintenance", link: "/maintenance", img: "assets/elements/img/clean3.png" },
+            ].map((item, i) => (
+              <div className="col-12 col-md-4" key={i}>
+                <div className="card h-100 shadow">
+                  {/* ✅ Clickable image */}
+                  <a href={item.link}>
+                    <img
+                      src={item.img}
+                      className="card-img-top img-fluid"
+                      alt={item.title}
+                    />
+                  </a>
+                  <div className="card-body">
+                    <h5 className="card-title">{item.title}</h5>
+                    <p className="card-text">
+                      {i === 0 &&
+                        "Professional solar panel installation services to power your future."}
+                      {i === 1 &&
+                        "Store energy efficiently with our advanced battery solutions."}
+                      {i === 2 &&
+                        "Reliable maintenance to keep your system running at peak performance."}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
-
-
+      </div>
 
       {/* Features Section */}
       <div className="container py-5">
@@ -123,8 +121,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-        
 
 
           {/* Right - text */}

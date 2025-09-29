@@ -405,86 +405,11 @@ background-color: #091652;
 
 
 // -------------------About_------------------------------
-
-/* --- Blue box / images --- */
-.blue-box-about {
-  background-color: #0aeec8;
-  overflow: visible;
-  /* no fixed height so the box expands naturally with images + line-wrapper */
-  // position: absolute;
-  border-radius: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: visible;
-  width: 610px;
-  height: 610px;
+.img-fluid-one {
+  
+  z-index: 3;
 }
-  // background-color: #091652;
-  // width: 610px;
-  // height: 610px;
-  // position: relative;
-  // border-radius: 16px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // overflow: visible;
-
-/* image sizes - responsive */
-.img-large-about {
-  width: 80%;
-  height: 80px;
-  top: -10px;
-  left: 20%;
-  object-fit: cover;
-  border-radius: 8px;
-  transform: translateY(-73%);
-
-  // width: 380px;
-  // height: 380px;
-  // top: -10px;
-  // left: 0%;
-  // transform: translateX(-50%);
-
-}
-
-.img-medium-about {
-  width: 100%;
-  height: 120px;
-  top: -70px;
-  left: 40%;
-  // object-fit: cover;
-  border-radius: 8px;
-  // width: 180px;
-  // height: 100px;
-  // transform: translateX(-50%);
-   position: absolute;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(184, 44, 44, 0.15);
-  object-fit: cover;
-}
-
-.img-small-about {
-  width: 80%;
-  height: 120px;
-  top: -10px;
-  left: 40%;
-  // object-fit: cover;
- position: absolute;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(184, 44, 44, 0.15);
-  object-fit: cover;  // border-radius: 8px;
-  // width: 180px;
-  // height: 100px;
-  // transform: translateX(-50%);
-}
-
-
-/* Adds a subtle shadow to images */
-.blue-box-about img {
-  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
-}
-
+ 
 /* --- Line wrapper reserves space so the blue box includes it in flow --- */
 .line-wrapper-about {
   position: relative;
@@ -506,42 +431,38 @@ background-color: #091652;
 /* base (hidden) states for segments */
 .horizontal-line-about,
 .vertical-line-about,
+.vertical-line-about-2,
 .horizontal-line-about-2 {
-  background: rgba(119, 9, 101, 0.95);
+  background: #0aeec8;
   position: absolute;
   border-radius: 6px;
 }
 
-/* First horizontal: starts from left, grows right */
-.horizontal-line-about {
-  top: 8px;         /* vertical offset inside wrapper */
-  left: 1px;
-  height: 4px;
-  width: 0;
-}
 
 /* Vertical: will appear at 75% from left of container */
 .vertical-line-about {
-  top: 8px;
-  left: 76%;        /* adjust this percent to control where the vertical drops */
-  width: 4px;
+  top: 64px;
+  left: 93.7%;        /* adjust this percent to control where the vertical drops */
+  width: 6px;
   height: 0;
   transform: translateX(-50%);
 }
 
-/* Second horizontal: positioned at bottom of vertical and grows leftwards */
-.horizontal-line-about-2 {
-  /* bottom position is set using the vertical final height; set top to match vertical final */
-  top: calc(8px + 380px); /* 120px is the vertical drop in this CSS — keep in sync */
-  right: 23.8%;
-  height: 4px;
-  width: 0;
-  transform-origin: right center; /* will expand leftwards */
+.vertical-line-about-2 {
+  top: 66px;
+  left: 12.2%;        /* adjust this percent to control where the vertical drops */
+  width: 6px;
+  height: 0;
+  transform: translateX(-50%);
 }
 
-/* --- ANIMATIONS: run only when wrapper has .animate --- */
-.line-wrapper.animate .horizontal-line-about {
-  animation: drawHorizontal-about 1s ease-out forwards;
+
+/* Second horizontal: positioned at bottom of vertical and grows leftwards */
+
+
+.line-wrapper.animate .vertical-line-about-2 {
+  animation: drawVertical-about 0.9s ease-out forwards;
+  animation-delay: 1.05s;
 }
 
 .line-wrapper.animate .vertical-line-about {
@@ -549,24 +470,97 @@ background-color: #091652;
   animation-delay: 1.05s;
 }
 
-.line-wrapper.animate .horizontal-line-about-2 {
-  animation: drawHorizontal2-about 1s ease-out forwards;
-  animation-delay: 2.05s;
-}
-
 /* Keyframes */
 @keyframes drawHorizontal-about  {
   from { width: 0; }
-  to   { width: 76%; } /* matches the left:75% used on vertical */
+  to   { width: 45%; } /* matches the left:75% used on vertical */
 }
 @keyframes drawVertical-about {
   from { height: 0; }
-  to   { height: 380px; } /* final vertical drop (keep in sync with top of horizontal-line-2) */
+  to   { height: 280px; } /* final vertical drop (keep in sync with top of horizontal-line-2) */
 }
 @keyframes drawHorizontal2-about {
   from { width: 0; }
   to   { width: 76%; } /* expands leftwards since transform-origin is right */
 }
+
+
+
+.about-line-slant-2 {
+  position: absolute;
+  bottom: 30rem;   /* adjust spacing from footer bottom */
+  left: 5rem;     /* adjust spacing from footer left */
+  width: 300px;   /* length of line */
+  height: 6px;    /* thickness */
+  background-color: #0aeec8; /* same accent color */
+  transform: rotate(-26deg); /* slant effect (\ shape) */
+  transform-origin: left center; /* pivot from left */
+  animation: drawVerticalAbout2 1.5s ease-out forwards;
+}
+
+.about-line-slant-1 {
+  position: absolute;
+  bottom: 38.2rem;   /* adjust spacing from footer bottom */
+  left: 21.8rem;     /* adjust spacing from footer left */
+  width: 200px;   /* length of line */
+  height: 6px;    /* thickness */
+  background-color: #0aeec8; /* same accent color */
+  transform: rotate(28deg); /* slant effect (\ shape) */
+  transform-origin: left center; /* pivot from left */
+  animation: drawHorizontal-about 3s ease-out forwards; 
+  animation-delay: 1.5s;
+}
+
+.about-line-slant-down-1 {
+  position: absolute;
+  bottom: 4.0rem;   /* adjust spacing from footer bottom */
+  left: 21.4rem;     /* adjust spacing from footer left */
+  width: 200px;   /* length of line */
+  height: 6px;    /* thickness */
+  background-color: #0aeec8; /* same accent color */
+  transform: rotate(-26deg); /* slant effect (\ shape) */
+  transform-origin: left center; /* pivot from left */
+  animation: drawHorizontal-about 3s ease-out forwards; 
+  animation-delay: 1.5s;
+}
+
+.about-line-slant-down-2 {
+  position: absolute;
+  bottom: 12.2rem;   /* adjust spacing from footer bottom */
+  left: 4.4rem;     /* adjust spacing from footer left */
+  width: 300px;   /* length of line */
+  height: 6px;    /* thickness */
+  background-color: #0aeec8; /* same accent color */
+  transform: rotate(26deg); /* slant effect (\ shape) */
+  transform-origin: left center; /* pivot from left */
+  animation: drawVerticalAboutDown2 1.5s ease-out forwards;
+}
+
+
+@keyframes drawVerticalAbout2 {
+  from { width: 0; }
+  to   { width: 300px; }
+}
+
+
+@keyframes drawVerticalAboutDown2 {
+  from { width: 0; }
+  to   { width: 302px; }
+}
+
+
+.teamup-section {
+  position: relative;
+  background-image: url('https://cdn.prod.website-files.com/64c6e4021257dfdf4b2f57d1/65a9564ee64da3b66c471ecb_mischa-frank-6M9OhcblUHM-unsplash%201%20(18).png');
+  background-size: cover;        /* make it cover the entire section */
+  background-position: center;   /* center the image */
+  background-attachment: fixed;  /* stays while scrolling */
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+
+
 
 /* --- Right-side text and button --- */
 .custom-btn {
@@ -781,109 +775,4 @@ background-color: #091652;
 
 
 // --------------------------------------------------------------------
-/* ===== Hexagon Frame Lines ===== */
-.hexagon-line-section {
-  position: absolute;
-  background: rgba(9, 115, 119, 0.95);
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(6, 206, 39, 0.9),
-              0 0 16px rgba(119, 9, 101, 0.7),
-              0 0 24px rgba(119, 9, 101, 0.5);
-}
 
-/* Top horizontal */
-.hex-line-top-section {
-  top: 100%;
-  left: 50%;
-  height: 4px;
-  width: 0;
-  transform: translateX(-50%);
-  animation: grow-horizontal-section 1.5s ease-out forwards,
-             glow-pulse-section 2.5s infinite ease-in-out;
-}
-
-/* Upper left diagonal */
-.hex-line-upper-left-section {
-  top: 52px;
-  left: calc(50% - 100px);
-  width: 0;
-  height: 4px;
-  transform: rotate(-60deg);
-  transform-origin: left center;
-  animation: grow-diagonal-section 1.5s ease-out 0.5s forwards,
-             glow-pulse-section 2.5s infinite ease-in-out 0.5s;
-}
-
-/* Upper right diagonal */
-.hex-line-upper-right-section {
-  top: 52px;
-  left: 50%;
-  width: 0;
-  height: 4px;
-  transform: rotate(60deg);
-  transform-origin: left center;
-  animation: grow-diagonal-section 1.5s ease-out 1s forwards,
-             glow-pulse-section 2.5s infinite ease-in-out 1s;
-}
-
-/* Bottom horizontal */
-.hex-line-bottom-section {
-  bottom: 50px;
-  left: 50%;
-  height: 4px;
-  width: 0;
-  transform: translateX(-50%);
-  animation: grow-horizontal-section 1.5s ease-out 2.5s forwards,
-             glow-pulse-section 2.5s infinite ease-in-out 2.5s;
-}
-
-/* Lower left diagonal */
-.hex-line-lower-left-section {
-  bottom: 52px;
-  left: calc(50% - 100px);
-  width: 0;
-  height: 4px;
-  transform: rotate(60deg);
-  transform-origin: left center;
-  animation: grow-diagonal-section 1.5s ease-out 1.5s forwards,
-             glow-pulse-section 2.5s infinite ease-in-out 1.5s;
-}
-
-/* Lower right diagonal */
-.hex-line-lower-right-section {
-  bottom: 52px;
-  left: 50%;
-  width: 0;
-  height: 4px;
-  transform: rotate(-60deg);
-  transform-origin: left center;
-  animation: grow-diagonal-section 1.5s ease-out 2s forwards,
-             glow-pulse-section 2.5s infinite ease-in-out 2s;
-}
-
-/* ===== Animations ===== */
-@keyframes glow-pulse-section {
-  0%, 100% {
-    box-shadow: 0 0 8px rgba(78, 233, 16, 0.9),
-                0 0 16px rgba(119, 9, 101, 0.7),
-                0 0 24px rgba(119, 9, 101, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 16px rgba(119, 9, 101, 1),
-                0 0 32px rgba(119, 9, 101, 0.9),
-                0 0 48px rgba(119, 9, 101, 0.7);
-  }
-}
-
-@keyframes grow-horizontal-section {
-  from { width: 0; }
-  to { width: 200px; }
-}
-
-@keyframes grow-diagonal-section {
-  from { width: 0; }
-  to { width: 115px; }
-}
-
-
-// --------------------------------------------------------------------------------

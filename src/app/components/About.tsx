@@ -26,57 +26,57 @@ export default function About() {
     <>    
     {/* <HomePageSlider/> */}
 
-     
-    <section className="solutions-highlight py-5">
-      <div className="container">
-        <div className="row align-items-center">
-          
-          {/* Left: Main Image */}
-          <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-            <img 
-              src="assets/elements/img/solar1.png" 
-              alt="Willez Solutions" 
-              className="img-fluid rounded shadow"
-            />
-          </div>
+     <section className="solutions-highlight py-5">
+  <div className="container">
+    <div className="row align-items-center">
+      
+      {/* Left: Main Image */}
+      <div className="col-12 col-lg-6 mb-4 mb-lg-0">
+        <img 
+          src="assets/elements/img/solar1.png" 
+          alt="Willez Solutions" 
+          className="img-fluid rounded shadow"
+        />
+      </div>
 
-          {/* Right: Text + Two Images */}
-          <div className="col-12 col-lg-6">
-            <h2 className="fw-bold mb-3">
-              Delivering Good Quality Products for the Country
-            </h2>
-            <p className="lead mb-4">
-              We specialise in all electrical power supplies, reliable solar 
-              solutions that combine efficiency, durability, installations and 
-              innovation to power a brighter future. Our commitment is to bring 
-              sustainable energy to communities nationwide.
-            </p>
+      {/* Right: Text + Two Images */}
+      <div className="col-12 col-lg-6">
+        <h2 className="fw-bold mb-3">
+          Delivering Good Quality Products for the Country
+        </h2>
+        <p className="lead mb-4">
+          We specialise in all electrical power supplies, reliable solar 
+          solutions that combine efficiency, durability, installations and 
+          innovation to power a brighter future. Our commitment is to bring 
+          sustainable energy to communities nationwide.
+        </p>
 
-            {/* Small image aligned right */}
-            <div className="text-end mb-3">
-              <img 
-                src="assets/elements/img/solar3.png" 
-                alt="Supporting solar system small" 
-                className="img-fluid rounded shadow-sm" 
-                style={{ maxWidth: "220px" }}
-              />
-            </div>
+        {/* Small image aligned right */}
+        <div className="text-end mb-3">
+          <img 
+            src="assets/elements/img/solar3.png" 
+            alt="Supporting solar system small" 
+            className="img-fluid rounded shadow-sm" 
+            style={{ maxWidth: "220px" }}
+          />
+        </div>
 
-            {/* Mid-sized image below */}
-            <div>
-              <img 
-                src="assets/elements/img/solar2.png" 
-                alt="Supporting solar system mid" 
-                className="img-fluid rounded shadow-sm" 
-                style={{ maxWidth: "380px" }}
-              />
-            </div>
-          </div>
-
+        {/* Mid-sized image below */}
+        <div>
+          <img 
+            src="assets/elements/img/solar2.png" 
+            alt="Supporting solar system mid" 
+            className="img-fluid rounded shadow-sm" 
+            style={{ maxWidth: "380px" }}
+          />
         </div>
       </div>
-    </section>
 
+    </div>
+  </div>
+</section>
+
+   
 
     <section className="teamup-section text-white">
       <div className="container py-5">
@@ -120,43 +120,45 @@ export default function About() {
                 <img
                   src="./assets/elements/img/solar1.png"
                   alt="Team Member 4"
-                  className="img-fluid stagger-up rounded shadow-sm"
+                  className="img-fluid-one stagger-up rounded
+                   shadow-sm mg-fluid position-absolute bottom-0 start-0"
                 />
               </div>
-
-              <div class="line-wrapper-section">
-                <div class="horizontal-line-about-section"></div>
-                <div class="vertical-line-about-section"></div>
-                <div class="horizontal-line-about-2-section"></div>
+            </div>
+            
+            <div
+              className={`line-wrapper mt-3 ${animate ? "animate" : ""}`}
+              ref={lineRef}
+              aria-hidden="true"
+            >
+              <div className="about-line-slant-1"></div> 
+              <div className="about-line-slant-2"></div>
+              <div className="vertical-line-about-2"></div>
+              <div className="line-container-about">
+              <div className="about-line-slant-down-2"></div>
+              <div className="vertical-line-about"></div>
+              <div className="about-line-slant-down-1"></div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </section>
     
-<section className="py-5 bg-light text-dark">
+    <section className="py-5 bg-light text-dark">
       <div className="container text-center">
-        <h2 className="fw-bold mb-4">Our Purpose</h2>
+        <h2 className="fw-bold mb-4">Our Purpose & Vision</h2>
         <p className="lead mx-auto" style={{ maxWidth: "800px" }}>
           At Willez, our purpose is to empower communities with reliable, 
           sustainable, and innovative energy solutions.  
           <br />
-         
-        </p>
-      </div>
-      <br/>
-
-      <div className="container text-center">
-        <h2 className="fw-bold mb-4">Vision</h2>
-        <p className="lead mx-auto" style={{ maxWidth: "800px" }}>
-                 
           Our vision is to lead the way in transforming the energy landscape,
           ensuring a brighter and greener future for generations to come.
         </p>
       </div>
-
     </section>
+
     <section
       className="parallax-section text-center text-white d-flex align-items-center justify-content-center"
       style={{
