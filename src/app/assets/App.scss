@@ -363,11 +363,12 @@ background-color: #091652;
 
 
 // -----------footer line --------------------
+.footer-widgets {z-index: 3;}
 
 .footer-line-slant-2 {
   position: absolute;
-  bottom: 36rem;   /* adjust spacing from footer bottom */
-  left: 70rem;     /* adjust spacing from footer left */
+  bottom: 35.7rem;   /* adjust spacing from footer bottom */
+  left: 86rem;     /* adjust spacing from footer left */
   width: 300px;   /* length of line */
   height: 6px;    /* thickness */
   background-color: #0aeec8; /* same accent color */
@@ -378,8 +379,8 @@ background-color: #091652;
 
 .footer-line-slant-1 {
   position: absolute;
-  bottom: 44.2rem;   /* adjust spacing from footer bottom */
-  left: 86.8rem;     /* adjust spacing from footer left */
+  bottom: 43.9rem;   /* adjust spacing from footer bottom */
+  left: 102.7rem;     /* adjust spacing from footer left */
   width: 304px;   /* length of line */
   height: 6px;    /* thickness */
   background-color: #0aeec8; /* same accent color */

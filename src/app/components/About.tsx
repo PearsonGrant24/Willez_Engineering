@@ -97,7 +97,7 @@ export default function About() {
             <div className="row image-grid">
               <div className="col-6 mb-3 mb-lg-0">
                 <img
-                  src="./assets/elements/img/solaronrack.jpg"
+                  src="./assets/elements/img/working-together-1.jpg"
                   alt="Team Member 1"
                   className="img-fluid stagger-up rounded shadow-sm"
                 />
@@ -118,7 +118,7 @@ export default function About() {
               </div>
               <div className="col-6 mt-lg-5">
                 <img
-                  src="./assets/elements/img/solar1.png"
+                  src="./assets/elements/img/team-work-2.jpg"
                   alt="Team Member 4"
                   className="img-fluid-one stagger-up rounded
                    shadow-sm mg-fluid position-absolute bottom-0 start-0"
@@ -145,7 +145,7 @@ export default function About() {
         </div>
       </div>
     </section>
-    
+
     <section className="py-5 bg-light text-dark">
       <div className="container text-center">
         <h2 className="fw-bold mb-4">Our Purpose & Vision</h2>
@@ -162,21 +162,20 @@ export default function About() {
     <section
       className="parallax-section text-center text-white d-flex align-items-center justify-content-center"
       style={{
-        backgroundImage: "url('assets/elements/img/SailorStudio.png')",
+        backgroundImage: "url('assets/elements/img/solar-roof.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed", // makes the background "stay" while scrolling
         minHeight: "90vh",
-      }}
-    >
-      <div className="container">
+        }}
+      >
+        <div className="container">
         <h1 className="display-4 fw-bold mb-3">A Class & Market-Certified Solution</h1>
         <p className="lead mb-0">
           High-performance solar technology designed for modern energy needs.
         </p>
       </div>
     </section>
-
        
     </>
   )

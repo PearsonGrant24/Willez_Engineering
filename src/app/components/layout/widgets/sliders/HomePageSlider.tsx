@@ -22,43 +22,20 @@ export default function HomePageSlider() {
   return (
     <>
     
-        <section className="hero slide-wrapper techex-landing-page">
-
-            <Swiper autoplay={true} navigation={true} pagination={true}
-                
-            >                
-                {slides.map((slide:any, slideIndex:number)=>(
-                    <SwiperSlide>
-                        <div className="single-slide bg-cover" key={slideIndex}
-                            style={{backgroundImage: "url('/assets/elements/img/barner/solarrack.jpg')", }} >
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-3">
-                                        <div className="slider-content ">
-                                            <h1 data-animation="fadeInUp"> 
-                                            <div className="carousel-position-four">
-                                                <span className="carousel-subtitle-v3 margin-bottom-5" style={{color:'#fff'}} data-animation="animated fadeInDown">
-                                                    Web App
-                                                </span>
-                                                <p className="carousel-subtitle-v4" style={{color:'#e6400c'}} data-animation="animated fadeInDown">
-                                                    Now picturing
-                                                </p>
-                                                <p className="carousel-subtitle-v3 mt-2" data-animation="animated fadeInDown">
-                                                </p>
-                                            </div>
-                                            </h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                ))
-                }
-
-            </Swiper>
-
-        </section>
+        <section
+      className="hero-slider d-flex align-items-center text-center text-white"
+      style={{
+        backgroundImage: `url(${images[current]})`,
+      }}
+    >
+      <div className="container position-relative z-2">
+        <h1 className="display-4 fw-bold">Powering a Brighter Future</h1>
+        <p className="lead mb-4">
+          High-efficiency solar, smart storage & reliable engineering
+        </p>
+        <button className="btn btn-primary btn-lg">Get in Touch</button>
+      </div>
+    </section>
 
     </>
   );
