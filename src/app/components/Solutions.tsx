@@ -2,9 +2,9 @@ import React, {useEffect, useRef, useState } from "react";
 import { HomePageSlider } from './layout/widgets/sliders/HomePageSlider.tsx'
 
 const panels = [
-  { id: "01", src: "./assets/elements/img/irragtion-solar.jpg", title: "Solar Innovation", text: "High-efficiency panels." },
+  { id: "01", src: "./assets/elements/img/installed_panels.jpg", title: "Solar Innovation", text: "High-efficiency panels." },
   { id: "02", src: "./assets/elements/img/Battery-packes.png", title: "Smart Storage", text: "Reliable battery solutions." },
-  { id: "03", src: "./assets/elements/img/BackGSolar.jpeg", title: "Wiring Expertise", text: "Safe wiring & rewiring." },
+  { id: "03", src: "./assets/elements/img/storage&invertors.jpg", title: "Wiring Expertise", text: "Safe wiring & rewiring." },
   { id: "04", src: "./assets/elements/img/Solar-solutions.png", title: "Systems & Support", text: "Full system supply & fix." },
 ];
 
@@ -110,7 +110,7 @@ export default function Solutions() {
               role="button"
               aria-label={`${p.title} - ${p.text}`}
               style={{ backgroundImage: `url(${p.src})` }}
-            >
+            > 
               <div className="panel-overlay">
                 <div className="panel-number">{p.id}</div>
                 <div className="panel-content">
