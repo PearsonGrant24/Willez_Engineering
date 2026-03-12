@@ -172,7 +172,7 @@ export default function SolarProducts() {
         repeatCount="indefinite"
       />
     </polygon>
-  </svg>
+    </svg>
 
 </section>
 

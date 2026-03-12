@@ -76,8 +76,6 @@ export default function About() {
   </div>
 </section>
 
-   
-
     <section className="teamup-section text-white">
       <div className="container py-5">
         <div className="row align-items-center">
